@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Observable, of } from 'rxjs';
+import { Observable, of, subscribeOn } from 'rxjs';
 import { Hospital } from '../models/Hospital.model';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class HospitalService {
       this.store.collection(this.dbPath).valueChanges({ idField: 'id' }))
 }
 
-  create(tutorial: Hospital): any {
-   this.http.post('https://psychoportal.firebaseio.com/hospitals.json', tutorial)
+  create(hospital: Hospital) {
+      this.store.collection('/hospitals').add({...hospital})
   }
 }

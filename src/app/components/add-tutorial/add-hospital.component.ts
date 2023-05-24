@@ -18,10 +18,7 @@ export class AddHospitalComponent implements OnInit {
 
   saveTutorial(): void {
     console.log(this.hospital)
-    this.hospitalService.create(this.hospital).then(() => {
-      console.log('Created new item successfully!');
-      this.submitted = true;
-    });
+    this.hospitalService.create(this.hospital);
   }
 
   newTutorial(): void {
