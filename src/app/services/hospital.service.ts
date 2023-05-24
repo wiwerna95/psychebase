@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Observable, of, subscribeOn } from 'rxjs';
+import { map, Observable, of, subscribeOn, tap } from 'rxjs';
 import { Hospital } from '../models/Hospital.model';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class HospitalService {
   constructor(private store: AngularFirestore, private http: HttpClient) {  }
 
   getAll(): any{
-    return of(
-      this.store.collection(this.dbPath).valueChanges({ idField: 'id' }))
+    console.log('SF');
+    return this.store.collection('/hospitals').get();
 }
 
   create(hospital: Hospital) {

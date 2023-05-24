@@ -8,15 +8,15 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddHospitalComponent } from './components/add-tutorial/add-hospital.component';
-import { TutorialsListComponent } from './components/tutorials-list/hospitals-list.component';
+import { AddHospitalComponent } from './components/add-hospital/add-hospital.component';
+import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     AddHospitalComponent,
-    TutorialsListComponent
+    HospitalsListComponent
   ],
   imports: [
     BrowserModule,
