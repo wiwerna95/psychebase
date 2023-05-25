@@ -22,7 +22,7 @@ export class HospitalService {
       this.store.collection('/hospitals').add({...hospital})
   }
 
-  getDepartamet() {
+  getDepartamet() 
 
    return  this.store.collectionGroup('departaments').valueChanges()
   }

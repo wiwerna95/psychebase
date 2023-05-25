@@ -25,7 +25,4 @@ describe('test Ewelina', () => {
       method: 'GET',
       url: 'https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fpsychoportal-fd912%2Fdatabases%2F(default)&gsessionid=ITN-cnqqbiOy07BVAH5Vvpzqh7ifBC1Nk8qQkdxIIKk&VER=8&RID=rpc&SID=wzNxH9Ewt2g1KTT00D0juA&CI=0&AID=0&TYPE=xmlhttp&zx=xaf38arj2e7&t=1,',      
       form: true,
-    })
-  });
-
 })
