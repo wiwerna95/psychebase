@@ -22,6 +22,7 @@ export class HospitalService {
   }
 
   getDepartamet() {
+    console.log('blablabla')
    return  this.store.collectionGroup('departaments').valueChanges()
   }
 
