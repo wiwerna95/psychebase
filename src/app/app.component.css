@@ -1,4 +1,42 @@
+body {
+  background-color: #CFCFCF;
+}
+
 .container h2 {
   text-align: center;
   margin: 25px auto;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  margin-top: 5px;
+}
+
+.toolbar {
+  height: 88px;
+}
+a {
+  color: #007B4F;
+  margin-left: 15px;
+}
+
+.pasek {
+  background-color: #007B4F;
+  display: flex;
+  flex-direction: row
+}
+
+.ikona {
+  height: 332px;
+}
+
+.white {
+  color: white;
+  position: relative;
+  margin-top: 50px;
+}
+
+.container {
+  background-color: #CFCFCF;
 }

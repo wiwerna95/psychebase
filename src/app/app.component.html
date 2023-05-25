@@ -1,31 +1,15 @@
-<div>
-  <nav class="navbar navbar-expand">
-    
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a routerLink="tutorials" class="nav-link">Lista Szpitali</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="add" class="nav-link">Dodaj Szpital</a>
-      </li>
-    </div>
-  </nav>
+<div class="">
+
 
   <p>
-    <mat-toolbar>
-     <img src="../assets/PsycheHub.png"/>
+    <mat-toolbar class="toolbar">
+     <img class="logo" src="../assets/PsycheHub.png"/>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <a routerLink="hospitals">Lista szpitali</a>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <a routerLink="add">Dodaj Szpital</a>
-      </button>
+        <a routerLink="">Jak przygotowac się do szpitala</a>
     </mat-toolbar>
   </p>
-
-  <div class="container mt-3">
-    <h2>{{ title }}</h2>
-    <router-outlet></router-outlet>
-  </div>
 </div>
+
+<router-outlet></router-outlet>
