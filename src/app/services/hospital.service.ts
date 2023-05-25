@@ -11,7 +11,7 @@ import { Hospital } from '../models/Hospital.model';
 export class HospitalService {
   private dbPath = '/hospitals';
 
-  constructor(private store: AngularFirestore, private http: HttpClient) {  }
+  constructor(private store: AngularFirestore, private http: HttpClient) { }
 
   getAll(): any{
     console.log('SF');
@@ -22,7 +22,7 @@ export class HospitalService {
       this.store.collection('/hospitals').add({...hospital})
   }
 
-  getDepartamet() 
+  getDepartamet() {
 
    return  this.store.collectionGroup('departaments').valueChanges()
   }

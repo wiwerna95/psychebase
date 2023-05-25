@@ -15,6 +15,7 @@ body {
 
 .toolbar {
   height: 88px;
+  background-color: white;
 }
 a {
   color: #007B4F;
