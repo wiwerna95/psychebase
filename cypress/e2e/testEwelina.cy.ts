@@ -23,10 +23,9 @@ describe('test Ewelina', () => {
   it('getAll', () => {
     cy.request({
       method: 'GET',
-      url: 'https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fpsychoportal-fd912%2Fdatabases%2F(default)&gsessionid=RxvesRtbxInrNHBlOer3K1ys8H6C1xLd4o939BnxEWk&VER=8&RID=rpc&SID=et1WABSgPkXBqi5W_btAuA&CI=0&AID=0&TYPE=xmlhttp&zx=ir5s0lf8z08z&t=1',
-      form: true,
-      failOnStatusCode: false,
-    },)
+url: 'https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fpsychoportal-fd912%2Fdatabases%2F(default)&gsessionid=ITN-cnqqbiOy07BVAH5Vvpzqh7ifBC1Nk8qQkdxIIKk&VER=8&RID=rpc&SID=wzNxH9Ewt2g1KTT00D0juA&CI=0&AID=0&TYPE=xmlhttp&zx=xaf38arj2e7&t=1,',      
+form: true,
+    })
   });
 
 })

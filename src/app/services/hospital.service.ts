@@ -14,7 +14,8 @@ export class HospitalService {
   constructor(private store: AngularFirestore, private http: HttpClient) {  }
 
   getAll(): any{
-    return this.store.collection('/hospitals').get()
+    console.log('SF');
+    return this.store.collection('/hospitals').get();
 }
 
   create(hospital: Hospital) {
@@ -22,7 +23,7 @@ export class HospitalService {
   }
 
   getDepartamet() {
-    console.log('blablabla')
+
    return  this.store.collectionGroup('departaments').valueChanges()
   }
 

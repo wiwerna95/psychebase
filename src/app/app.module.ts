@@ -13,8 +13,6 @@ import { HospitalsListComponent } from './components/hospitals-list/hospitals-li
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +24,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // for firestore
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
