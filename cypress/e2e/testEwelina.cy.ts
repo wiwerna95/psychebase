@@ -1,9 +1,14 @@
+///  <reference types="cypress" /> 
+///  <reference path="../support/commands.ts" />
+let jsonFile = 'cypress/fixtures/exampleEwelina.json';
+
+
 describe('test Ewelina', () => {
   it('setup environment', () => {
     let version = '0.0.0';
     let namespace = 'bazapsyche';
 
-    cy.wait(10000);
+    cy.wait(1000);
   })
 
 
@@ -20,12 +25,28 @@ describe('test Ewelina', () => {
     })
   })
 
-  it('getAll', () => {
-    cy.request({
-      method: 'GET',
-      url: 'https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fpsychoportal-fd912%2Fdatabases%2F(default)&gsessionid=ITN-cnqqbiOy07BVAH5Vvpzqh7ifBC1Nk8qQkdxIIKk&VER=8&RID=rpc&SID=wzNxH9Ewt2g1KTT00D0juA&CI=0&AID=0&TYPE=xmlhttp&zx=xaf38arj2e7&t=1,',      
-      form: true,
+  // it('getAll', () => {
+  //   cy.request({
+  //     method: 'GET',
+  //     url: 'https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?database=projects%2Fpsychoportal-fd912%2Fdatabases%2F(default)&gsessionid=ITN-cnqqbiOy07BVAH5Vvpzqh7ifBC1Nk8qQkdxIIKk&VER=8&RID=rpc&SID=wzNxH9Ewt2g1KTT00D0juA&CI=0&AID=0&TYPE=xmlhttp&zx=xaf38arj2e7&t=1,',      
+  //     form: true,
+  //   })
+  // });
+
+  it('readFile', () => {
+    cy.readFile(jsonFile).then((data) => {
+      const currentDate = new Date().toISOString().slice(0, 10);
+     data.MessageUtcTime = `${currentDate}`
+     expect(data)
+     cy.writeFile(jsonFile, JSON.stringify(data));
+     expect(data.MessageUtcTime).match(/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/)
+
+     cy.log(data)
     })
-  });
+  })
+
+  it('ewelinaTest', () => {
+    cy.ewelinaTest(jsonFile)
+  })
 
 })

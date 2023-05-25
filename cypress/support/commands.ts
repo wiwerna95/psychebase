@@ -35,3 +35,15 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('ewelinaTest', (file) => {
+    cy.readFile(file).then( (file) => {
+        file.MessageId = 'Message Id Ewelina'
+        expect(true);
+        cy.log(file.MessageId)
+    })
+})
+
+import { mount } from 'cypress/angular'
+
+Cypress.Commands.add('mount', mount)
