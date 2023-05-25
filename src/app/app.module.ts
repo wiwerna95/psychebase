@@ -12,11 +12,13 @@ import { AddHospitalComponent } from './components/add-hospital/add-hospital.com
 import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 @NgModule({
   declarations: [
     AppComponent,
     AddHospitalComponent,
-    HospitalsListComponent
+    HospitalsListComponent,
+    UpdateHospitalComponent
   ],
   imports: [
     BrowserModule,
