@@ -14,13 +14,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { StartPageComponent } from './components/start-page/start-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { AboutComponent } from './components/about/about.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AddHospitalComponent,
     HospitalsListComponent,
     UpdateHospitalComponent,
-    StartPageComponent
+    StartPageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,10 +35,13 @@ import { StartPageComponent } from './components/start-page/start-page.component
     FormsModule,
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // for firestore
+    AngularFirestoreModule,
     HttpClientModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

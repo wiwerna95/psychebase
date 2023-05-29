@@ -9,22 +9,19 @@ import { Hospital } from '../models/Hospital.model';
   providedIn: 'root'
 })
 export class HospitalService {
-  private dbPath = '/hospitals';
 
   constructor(private store: AngularFirestore, private http: HttpClient) { }
 
-  getAll(): any{
-    console.log('SF');
+  getAll(): Observable<any>{
     return this.store.collection('/hospitals').get();
 }
 
   create(hospital: Hospital) {
-      this.store.collection('/hospitals').add({...hospital})
+    this.store.collection('/hospitals').add({...hospital})
   }
 
   getDepartamet() {
-
-   return  this.store.collectionGroup('departaments').valueChanges()
+    return this.store.collectionGroup('departaments').valueChanges()
   }
 
   addDepartament(departament: Departament) {

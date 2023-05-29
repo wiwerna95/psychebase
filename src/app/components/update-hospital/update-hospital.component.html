@@ -1,37 +1,27 @@
-Dodawanie oddziału dla szpitala: {{hospital.name}}
+
 
 <div class="submit-form">
+  <h3>Dodawanie oddziału dla szpitala: {{hospital.name}} </h3>
    <div class="form-group">
-        <label for="title">Nazwa szpitala:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          required
-          [(ngModel)]="hospital.name"
-          name="title"
-        />
-      </div>
-  
-      <div class="form-group">
-        <label for="description">Nazwa oddziału:</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="temporaryDepartament.name"
-          name="description"
-        />
+        <mat-form-field class="full-width">
+          <mat-label>Nazwa szpitala:</mat-label>
+          <input [(ngModel)]="hospital.name" type="text" matInput>
+        </mat-form-field>
       </div>
       <div class="form-group">
-        <label for="description">Typ:</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="temporaryDepartament.type"
-          name="description"
-        />
+        <mat-form-field class="full-width">
+          <mat-label>Nazwa oddziału:</mat-label>
+          <input [(ngModel)]="temporaryDepartament.name" type="text" matInput>
+        </mat-form-field>
       </div>
+      <div class="form-group">
+        <mat-form-field class="full-width">
+          <mat-label>Typ:</mat-label>
+          <input [(ngModel)]="temporaryDepartament.type" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <button mat-button (click)="saveDepartament()" class="btn btn-success">Submit</button>
 </div>
-<button (click)="saveDepartament()" class="btn btn-success">Submit</button>
+
+
+

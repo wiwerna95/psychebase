@@ -1,3 +1,4 @@
+import { QuerySnapshot } from '@angular/fire/compat/firestore';
 import { subscribeOn } from 'rxjs';
 import { HospitalService } from './../../services/hospital.service';
 import { Component, OnInit } from '@angular/core';
@@ -23,17 +24,15 @@ export class UpdateHospitalComponent implements OnInit {
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe((params) => {
-      this.name = params // (+) converts string 'id' to a number
-      console.log(this.name);
+      this.name = params;
       this.searchHospital();
-      // In a real app: dispatch action to load the details here.
    });
   }
 
   private searchHospital() {
-    this.hospitalService.getAll().subscribe( (data: any) => {
+    this.hospitalService.getAll().subscribe( data => {
       const hospitals: Hospital[] = [];
-      data.docs.forEach((doc: any) => {
+      data.docs.forEach((doc: { data: () => Hospital; }) => {
         hospitals.push(doc.data())
       })
       hospitals.forEach( (hosp: Hospital) => {
@@ -47,18 +46,12 @@ export class UpdateHospitalComponent implements OnInit {
   }
 
   getDepartamentsOfHospital() {
-    console.log(this.hospital);
     this.hospitalService.getDepartamet().subscribe( (departaments: any) => {
-      console.log(departaments);
       this.departaments = departaments;
     })
   }
 
-  updateHospital() {
-
-  }
   saveDepartament() {
-    console.log(this.temporaryDepartament);
     const departament = {
       name: this.temporaryDepartament.name,
       type: this.temporaryDepartament.type,

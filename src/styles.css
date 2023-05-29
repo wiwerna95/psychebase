@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-body {
-    background-color: #CFCFCF;
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+    font-family: Roboto;
+    src: url('../src/assets/Roboto/Roboto-Regular.ttf');
 }
+body {
+    background-color: #f2f2f2;
+    font-family: Roboto;
+    margin: 0px;
+}
+

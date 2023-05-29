@@ -7,17 +7,13 @@ import {  Hospital } from 'src/app/models/Hospital.model';
   templateUrl: './add-hospital.component.html',
   styleUrls: ['./add-hospital.component.css']
 })
-export class AddHospitalComponent implements OnInit {
+export class AddHospitalComponent {
   hospital: Hospital = {};
   submitted = false;
 
   constructor(private hospitalService: HospitalService) { }
 
-  ngOnInit(): void {
-  }
-
   saveHospital(): void {
-    console.log(this.hospital)
     this.hospitalService.create(this.hospital);
     this.hospital = new Hospital;
     this.submitted = true;

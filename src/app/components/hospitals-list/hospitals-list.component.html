@@ -1,5 +1,18 @@
 <ul>
-  <li *ngFor="let element of hospitals">{{element.name}} 
-    <button mat-button [routerLink]="['/update', element.name]"> dodaj oddział </button></li>
-  
+  <li *ngFor="let hospital of hospitals">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title class=""><b>{{hospital.name}}</b></mat-card-title>
+        <mat-card-subtitle>{{hospital.address}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        {{hospital.description}}
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="btn btn-stroked" mat-button [routerLink]="['/update', hospital.name]">Dodaj oddział</button>
+        <button class="btn btn-stroked" mat-button>Zobacz</button>
+      </mat-card-actions>
+    </mat-card>
+   
+  </li>
 </ul>

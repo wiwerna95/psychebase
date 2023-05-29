@@ -1,6 +1,18 @@
 <div class="submit-form">
   <div>
     <div class="form-group">
+
+      <div class="form-group">
+        <label for="description">Nazwa:</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="hospital.name"
+          name="description"
+        />
+      </div>
+
       <label for="title">Adres:</label>
       <input
         type="text"
@@ -9,6 +21,17 @@
         required
         [(ngModel)]="hospital.address"
         name="title"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Opis:</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="hospital.description"
+        name="description"
       />
     </div>
 
@@ -23,7 +46,7 @@
       />
     </div>
     <div class="form-group">
-      <label for="description">Telefon::</label>
+      <label for="description">Telefon:</label>
       <input
         class="form-control"
         id="description"
@@ -34,18 +57,7 @@
     </div>
 
     <div class="form-group">
-      <label for="description">Opis</label>
-      <input
-        class="form-control"
-        id="description"
-        required
-        [(ngModel)]="hospital.description"
-        name="description"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="description">Dyrektor</label>
+      <label for="description">Dyrektor:</label>
       <input
         class="form-control"
         id="description"
@@ -56,7 +68,7 @@
     </div>
 
     <div class="form-group">
-      <label for="description">email</label>
+      <label for="description">Email:</label>
       <input
         class="form-control"
         id="description"
@@ -67,7 +79,7 @@
     </div>
 
     <div class="form-group">
-      <label for="description">logo</label>
+      <label for="description">Logo:</label>
       <input
         class="form-control"
         id="description"
@@ -78,18 +90,7 @@
     </div>
 
     <div class="form-group">
-      <label for="description">Nazwa</label>
-      <input
-        class="form-control"
-        id="description"
-        required
-        [(ngModel)]="hospital.name"
-        name="description"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="description">Strona internetowa</label>
+      <label for="description">Strona internetowa:</label>
       <input
         class="form-control"
         id="description"
@@ -110,5 +111,5 @@
     </div>
 
 
-    <button (click)="saveHospital()" class="btn btn-success">Submit</button>
+    <button (click)="saveHospital()" class="btn btn-success">Dodaj</button>
   </div>

@@ -1,3 +1,4 @@
+import { AboutComponent } from './components/about/about.component';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'hospitals', component: HospitalsListComponent },
   { path: 'add', component: AddHospitalComponent },
   { path: 'start-page', component: StartPageComponent},
-  { path: 'update/:name', component: UpdateHospitalComponent}
+  { path: 'update/:name', component: UpdateHospitalComponent},
+  { path: 'about', component: AboutComponent}
 ];
 
 @NgModule({
