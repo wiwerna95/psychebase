@@ -8,28 +8,19 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddHospitalComponent } from './components/add-hospital/add-hospital.component';
-import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { StartPageComponent } from './components/start-page/start-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { AboutComponent } from './components/about/about.component';
-import { HospitalPreparationComponent } from './components/hospital-preparation/hospital-preparation.component';
+import { InformationsModule } from './informations/informations.module';
+import { SearchingModule } from './searching/searching.module';
+import { ShowingModule } from './showing/showing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddHospitalComponent,
-    HospitalsListComponent,
-    UpdateHospitalComponent,
-    StartPageComponent,
-    AboutComponent,
-    HospitalPreparationComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +35,10 @@ import { HospitalPreparationComponent } from './components/hospital-preparation/
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    InformationsModule,
+    SearchingModule,
+    ShowingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
