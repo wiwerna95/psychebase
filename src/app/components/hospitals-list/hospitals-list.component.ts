@@ -26,6 +26,5 @@ export class HospitalsListComponent implements OnInit {
         this.hospitals.push(doc.data())
       })
     })
-    console.log(this.hospitals)
   }
 }

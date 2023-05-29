@@ -1,3 +1,4 @@
+import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'start-page', pathMatch: 'full' },
   { path: 'hospitals', component: HospitalsListComponent },
   { path: 'add', component: AddHospitalComponent },
-  { path: 'start-page', component: StartPageComponent}
+  { path: 'start-page', component: StartPageComponent},
+  { path: 'update/:name', component: UpdateHospitalComponent}
 ];
 
 @NgModule({

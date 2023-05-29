@@ -4,11 +4,13 @@
 
   <p>
     <mat-toolbar class="toolbar">
-     <img class="logo" src="../assets/PsycheHub.png"/>
-      <span class="example-spacer"></span>
-        <a routerLink="hospitals">Lista szpitali</a>
-        <a routerLink="add">Dodaj Szpital</a>
-        <a routerLink="">Jak przygotowac się do szpitala</a>
+    <a [routerLink]="['/start-page']">
+      <img class="logo" src="../assets/PsycheHub.png"/>
+    </a>
+    <span class="example-spacer"></span>
+    <a routerLink="hospitals">Lista szpitali</a>
+    <a routerLink="add">Dodaj Szpital</a>
+    <a routerLink="">Jak przygotowac się do szpitala</a>
     </mat-toolbar>
   </p>
 </div>

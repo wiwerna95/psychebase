@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let element of hospitals">{{element.name}} 
+    <button mat-button [routerLink]="['/update', element.name]"> dodaj oddział </button></li>
+  
+</ul>
