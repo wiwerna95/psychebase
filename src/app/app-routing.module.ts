@@ -1,3 +1,4 @@
+import { HospitalPreparationComponent } from './components/hospital-preparation/hospital-preparation.component';
 import { AboutComponent } from './components/about/about.component';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'add', component: AddHospitalComponent },
   { path: 'start-page', component: StartPageComponent},
   { path: 'update/:name', component: UpdateHospitalComponent},
-  { path: 'about', component: AboutComponent}
+  { path: 'about', component: AboutComponent},
+  { path: 'prepare', component: HospitalPreparationComponent}
 ];
 
 @NgModule({

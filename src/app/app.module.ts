@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AboutComponent } from './components/about/about.component';
+import { HospitalPreparationComponent } from './components/hospital-preparation/hospital-preparation.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AboutComponent } from './components/about/about.component';
     HospitalsListComponent,
     UpdateHospitalComponent,
     StartPageComponent,
-    AboutComponent
+    AboutComponent,
+    HospitalPreparationComponent
   ],
   imports: [
     BrowserModule,
