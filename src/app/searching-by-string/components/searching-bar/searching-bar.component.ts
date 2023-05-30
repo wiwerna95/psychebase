@@ -12,7 +12,7 @@ export class SearchingBarComponent implements OnInit {
   @Output() searchcriteria = new EventEmitter<String>();
   
   public search: string = '';
-  public autoCompleteList: Array<string> = ['Poznań'];
+  public autoCompleteList: Array<string> = [];
   private resultOfSearching: Array<Hospital> = [];
   private hospitals: Array<Hospital> = [];
   constructor(private communicationService: CommunicationService,
@@ -28,6 +28,16 @@ export class SearchingBarComponent implements OnInit {
     this.searchHospitalByCity();
   }
 
+  private getAutocompleteList() {
+    this.autoCompleteList = new Array<any>();
+   
+    for (let element of this.hospitals) {
+      console.log(element)
+      this.autoCompleteList.push(element.city!);
+    }
+    console.log(this.autoCompleteList)
+  }
+
   private getAllHospitals() {
     this.hospitalService.getAll().subscribe( data => {
       const hospitals: Hospital[] = [];
@@ -37,15 +47,17 @@ export class SearchingBarComponent implements OnInit {
       })
       console.log(hospitals)
       this.hospitals = hospitals;
+      this.getAutocompleteList();
     })
   }
 
 
   private searchHospitalByCity() {
-    console.log('search by', this.hospitals);
-    this.resultOfSearching =  this.hospitals.filter(x => {
-      console.log(x.city, this.search)
-      return x.city === this.search;
+    this.resultOfSearching =  this.hospitals.filter((x: Hospital) => {
+      const trimedCity = x.city?.replace(/ /g,'').toLowerCase();
+      const trimedSearch = this.search.replace(/ /g,'').toLowerCase();
+      console.log(trimedCity, trimedSearch);
+      return trimedCity === trimedSearch;
       
     })
     if (this.resultOfSearching.length === 0 && this.search === '') {
@@ -54,5 +66,9 @@ export class SearchingBarComponent implements OnInit {
       this.communicationService.transferResultOfSearching(this.resultOfSearching);
 
     }
+  }
+
+  public filterPostList(event: Event) {
+    console.log(event);
   }
 }
