@@ -14,8 +14,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { InformationsModule } from './informations/informations.module';
-import { SearchingModule } from './searching/searching.module';
+import { SearchingByStringModule } from './searching-by-string/searching-by-string.module';
 import { ShowingModule } from './showing/showing.module';
+
 
 
 @NgModule({
@@ -36,9 +37,8 @@ import { ShowingModule } from './showing/showing.module';
     MatInputModule,
     MatButtonModule,
     InformationsModule,
-    SearchingModule,
+    SearchingByStringModule,
     ShowingModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

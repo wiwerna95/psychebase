@@ -1,0 +1,24 @@
+.search-bar-container {
+    margin: 20px auto;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+}
+
+.mat-form-field {
+    width: 100%
+}
+ h2 {
+    text-align: center;
+ }
+
+
