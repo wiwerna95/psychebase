@@ -24,7 +24,6 @@ export class HospitalsListComponent implements OnInit {
   ngOnInit(): void {
     this.retrieveHospitals();
     this.communicationService.transferResultOfSearching$.subscribe( value => {
-      console.log(value);
       this.hospitals = value;
     })
   }

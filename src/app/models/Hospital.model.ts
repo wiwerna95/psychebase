@@ -12,4 +12,5 @@ export class Hospital {
    rating?: number;
    type?: string;
    page?: string;
+   voivodeship?: string;
   }

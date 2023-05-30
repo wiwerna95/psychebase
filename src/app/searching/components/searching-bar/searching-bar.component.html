@@ -1,21 +1,13 @@
 <div class="search-bar-container">
     <div class="form-group">
-        <h2>Wyszukaj po lokalizacji</h2>
+        <h3>Wyszukaj po lokalizacji</h3>
         <mat-form-field class="full-width">
           <mat-label>np. Poznań... </mat-label>
           <input 
           [(ngModel)]="search" 
           type="text" 
           (keyup.enter) = "searchHospital()" 
-          matInput
-          #autocompleteInput
-        
-          >
-          <!-- <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of hospitals" [value]="option" (onSelectionChange)="filterPostList($event)">
-              {{option.city}}
-            </mat-option>
-          </mat-autocomplete> -->
+          matInput>
         </mat-form-field>
     </div> 
     <button mat-button mat-raised-button (click)="searchHospital()" color="success"><h3><b>Szukaj</b></h3></button>

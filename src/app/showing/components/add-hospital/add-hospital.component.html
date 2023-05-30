@@ -28,10 +28,18 @@
 
   <div class="form-group">
     <mat-form-field class="full-width">
+      <mat-label>Województwo:</mat-label>
+      <input [(ngModel)]="hospital.voivodeship" type="text" matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field class="full-width">
       <mat-label>Opis:</mat-label>
       <input [(ngModel)]="hospital.description" type="text" matInput>
     </mat-form-field>
   </div>
+
 
 
   <div class="form-group">

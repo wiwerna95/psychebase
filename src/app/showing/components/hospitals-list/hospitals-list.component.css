@@ -2,7 +2,7 @@ ul li {
     list-style-type: none;
 }
 
-.mat-card {
+.card {
     width: 50%;
     margin: 20px auto;
 }

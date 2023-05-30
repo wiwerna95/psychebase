@@ -8,8 +8,8 @@ import { UpdateHospitalComponent } from './components/update-hospital/update-hos
 
 const routes: Routes = [
   { path: '', redirectTo: 'start-page', pathMatch: 'full' },
-  { path: 'add', component: AddHospitalComponent },
-  { path: 'hospitals', component: HospitalsListComponent },
+  { path: 'dodaj', component: AddHospitalComponent },
+  { path: 'szpitale', component: HospitalsListComponent },
   { path: 'update/:name', component: UpdateHospitalComponent },
 ];
 

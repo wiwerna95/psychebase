@@ -8,10 +8,10 @@ import { UpdateHospitalComponent } from '../showing/components/update-hospital/u
 import { StartPageComponent } from './components/start-page/start-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'start-page', pathMatch: 'full' },
-  { path: 'start-page', component: StartPageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'prepare', component: HospitalPreparationComponent}
+  { path: '', redirectTo: 'start', pathMatch: 'full' },
+  { path: 'start', component: StartPageComponent },
+  { path: 'o-stronie', component: AboutComponent },
+  { path: 'przygotowanie', component: HospitalPreparationComponent}
 
 ];
 

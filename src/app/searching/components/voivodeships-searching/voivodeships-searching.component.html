@@ -1,0 +1,36 @@
+
+
+
+<div class="accordion-container">
+    <h3> Wyszukaj szpital po województwie </h3>
+    <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          *ngFor="let item of arrayWithVoivodeships; let index = index;"
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.id]="'accordion-header-' + index"
+          [attr.aria-expanded]="accordionItem.expanded"
+          [attr.aria-controls]="'accordion-body-' + index">
+          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+            {{ item.voivodeship }}
+            <span class="example-accordion-item-description">
+            {{ accordionItem.expanded ? 'zamknij' : 'otwórz' }}
+            </span>
+          </div>
+          <div
+            class="example-accordion-item-body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index">
+            <ul *ngFor="let hospital of item.hospitals">
+                <li>
+                    {{hospital.name}}
+                </li>
+            </ul>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+</div>

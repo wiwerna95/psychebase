@@ -1,12 +1,13 @@
 import { HospitalService } from './../../../services/hospital.service';
 import { Hospital } from 'src/app/models/Hospital.model';
 import { CommunicationService } from './../../../services/communication-service.service';
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-searching-bar',
   templateUrl: './searching-bar.component.html',
-  styleUrls: ['./searching-bar.component.css']
+  styleUrls: ['./searching-bar.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SearchingBarComponent implements OnInit {
   @Output() searchcriteria = new EventEmitter<String>();
@@ -14,7 +15,8 @@ export class SearchingBarComponent implements OnInit {
   public search: string = '';
   public autoCompleteList: Array<string> = [];
   private resultOfSearching: Array<Hospital> = [];
-  private hospitals: Array<Hospital> = [];
+  public hospitals: Array<Hospital> = [];
+displayFn: any;
   constructor(private communicationService: CommunicationService,
               private hospitalService: HospitalService) {}
 
@@ -35,7 +37,6 @@ export class SearchingBarComponent implements OnInit {
       console.log(element)
       this.autoCompleteList.push(element.city!);
     }
-    console.log(this.autoCompleteList)
   }
 
   private getAllHospitals() {

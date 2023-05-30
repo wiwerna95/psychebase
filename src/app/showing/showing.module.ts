@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ShowingRoutingModule } from './showing-routing.module';
-import { SearchingBarComponent } from '../searching-by-string/components/searching-bar/searching-bar.component';
+import { SearchingBarComponent } from '../searching/components/searching-bar/searching-bar.component';
 
 
 
