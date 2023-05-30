@@ -1,3 +1,4 @@
+import { CommunicationService } from './../../../services/communication-service.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Hospital } from 'src/app/models/Hospital.model';
@@ -18,11 +19,17 @@ export class HospitalsListComponent implements OnInit {
   hospitals: Hospital[] = [];
   searchText: string = ''
 
-  constructor(private hospitalService: HospitalService) { }
+  constructor(private hospitalService: HospitalService, private communicationService: CommunicationService) { }
 
   ngOnInit(): void {
     this.retrieveHospitals();
+    this.communicationService.transferResultOfSearching$.subscribe( value => {
+      console.log(value);
+      this.hospitals = value;
+    })
   }
+
+
 
   retrieveHospitals(): void {
     this.hospitalService.getAll()

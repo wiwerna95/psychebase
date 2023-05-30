@@ -3,9 +3,9 @@
         <h2>Wyszukaj po lokalizacji</h2>
         <mat-form-field class="full-width">
           <mat-label>np. Poznań... </mat-label>
-          <input [(ngModel)]="search" type="text" matInput>
+          <input [(ngModel)]="search" type="text" (keyup.enter) = "searchHospital()" matInput>
         </mat-form-field>
     </div> 
-    <button mat-button mat-raised-button color="success"><h3><b>Szukaj</b></h3></button>
+    <button mat-button mat-raised-button (click)="searchHospital()" color="success"><h3><b>Szukaj</b></h3></button>
 
 </div>

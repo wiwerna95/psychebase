@@ -16,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { InformationsModule } from './informations/informations.module';
 import { SearchingByStringModule } from './searching-by-string/searching-by-string.module';
 import { ShowingModule } from './showing/showing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -39,6 +41,8 @@ import { ShowingModule } from './showing/showing.module';
     InformationsModule,
     SearchingByStringModule,
     ShowingModule,
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
