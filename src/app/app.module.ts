@@ -17,9 +17,8 @@ import { InformationsModule } from './informations/informations.module';
 import { SearchingByStringModule } from './searching-by-string/searching-by-string.module';
 import { ShowingModule } from './showing/showing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [
@@ -42,7 +41,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SearchingByStringModule,
     ShowingModule,
     BrowserAnimationsModule,
-    Ng2SearchPipeModule
+    MatAutocompleteModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

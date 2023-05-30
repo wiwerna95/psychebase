@@ -9,12 +9,13 @@
           (keyup.enter) = "searchHospital()" 
           matInput
           #autocompleteInput
-          [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        
+          >
+          <!-- <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let option of hospitals" [value]="option" (onSelectionChange)="filterPostList($event)">
               {{option.city}}
             </mat-option>
-          </mat-autocomplete>
+          </mat-autocomplete> -->
         </mat-form-field>
     </div> 
     <button mat-button mat-raised-button (click)="searchHospital()" color="success"><h3><b>Szukaj</b></h3></button>
