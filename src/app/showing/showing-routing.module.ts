@@ -1,3 +1,4 @@
+import { SingleHospitalComponent } from './components/single-hospital/single-hospital.component';
 import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'dodaj', component: AddHospitalComponent },
   { path: 'szpitale', component: HospitalsListComponent },
   { path: 'update/:name', component: UpdateHospitalComponent },
+  { path: 'show/:hospital', component: SingleHospitalComponent }
 ];
 
 @NgModule({

@@ -8,15 +8,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HospitalsListComponent } from './showing/components/hospitals-list/hospitals-list.component';
 import { AddHospitalComponent } from './showing/components/add-hospital/add-hospital.component';
 
-// const routes: Routes = [
-//   { path: '', redirectTo: 'start-page', pathMatch: 'full' },
-//   { path: 'hospitals', component: HospitalsListComponent },
-//   { path: 'add', component: AddHospitalComponent },
-//   { path: 'start-page', component: StartPageComponent},
-//   { path: 'update/:name', component: UpdateHospitalComponent},
-//   { path: 'about', component: AboutComponent},
-//   { path: 'prepare', component: HospitalPreparationComponent}
-// ];
 
 const routes: Routes = [
   

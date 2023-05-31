@@ -1,0 +1,50 @@
+
+<div class="hospital-container"> 
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title-group>
+            <mat-card-title>{{hospital.name}}</mat-card-title>
+            <mat-card-subtitle> Typ szpitala: {{hospital.type}} </mat-card-subtitle>
+            <mat-card-subtitle> Ilość oddziałów: {{hospital.departamentQuantity}} </mat-card-subtitle>
+           
+            <img mat-card-sm-image src={{hospital.logo}} >
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            {{hospital.description}}
+            <mat-grid-list cols="2" rowHeight="5:1">
+                <mat-grid-tile>
+                    <div>Kontakt:</div>
+                    <div>telefon:  {{hospital.phone}}</div>
+                    <div>Email: {{hospital.email}}</div>
+                    <div>Strona internetowa: <a href="{{hospital.page}}">{{hospital.page}} </a></div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div>Adres:</div>
+                    <div>{{hospital.address}}, {{hospital.city}}</div>
+                    <div>{{hospital.voivodeship}}</div>
+                </mat-grid-tile>
+              </mat-grid-list>
+              <div>
+                <app-hosptial-rating></app-hosptial-rating>                
+                <div>
+                   
+                    <h3>Dostępne oddziały: </h3>
+                    <mat-grid-list cols="1" rowHeight="10:1">
+                        <mat-grid-tile class="frame" *ngFor="let departament of departaments">
+                          <p>Nazwa: {{departament.name}}</p>
+                          <p>Typ: {{departament.type}}</p>
+                          <app-departamet-rating></app-departamet-rating>
+                        </mat-grid-tile>
+                      </mat-grid-list>
+                </div>
+              </div>
+
+              <div>
+                <h3> Opinie o szpitalu:</h3>
+                <div> <app-comments></app-comments></div>
+              </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

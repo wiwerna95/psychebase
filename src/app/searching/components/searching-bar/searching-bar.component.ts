@@ -26,7 +26,6 @@ displayFn: any;
   }
 
   public searchHospital() {
-    console.log(this.search);
     this.searchHospitalByCity();
   }
 
@@ -34,7 +33,6 @@ displayFn: any;
     this.autoCompleteList = new Array<any>();
    
     for (let element of this.hospitals) {
-      console.log(element)
       this.autoCompleteList.push(element.city!);
     }
   }
@@ -57,7 +55,6 @@ displayFn: any;
     this.resultOfSearching =  this.hospitals.filter((x: Hospital) => {
       const trimedCity = x.city?.replace(/ /g,'').toLowerCase();
       const trimedSearch = this.search.replace(/ /g,'').toLowerCase();
-      console.log(trimedCity, trimedSearch);
       return trimedCity === trimedSearch;
       
     })

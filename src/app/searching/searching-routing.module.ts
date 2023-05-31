@@ -1,3 +1,4 @@
+import { SingleHospitalComponent } from './../showing/components/single-hospital/single-hospital.component';
 
 
 import { NgModule } from '@angular/core';

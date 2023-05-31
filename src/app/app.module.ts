@@ -46,9 +46,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     InformationsModule,
     SearchingModule,
     ShowingModule,
-   BrowserAnimationsModule,
-   MatExpansionModule,
-   GoogleMapsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    GoogleMapsModule,
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

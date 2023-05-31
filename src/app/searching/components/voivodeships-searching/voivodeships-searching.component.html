@@ -27,7 +27,8 @@
             [attr.aria-labelledby]="'accordion-header-' + index">
             <ul *ngFor="let hospital of item.hospitals">
                 <li>
-                    {{hospital.name}}
+                    <h4>{{hospital.name}}</h4>
+                    <button class="btn btn-stroked"  (click)="redirectToHospital(hospital)">Zobacz</button>
                 </li>
             </ul>
           </div>

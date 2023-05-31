@@ -20,7 +20,7 @@ export class HospitalService {
     this.store.collection('/hospitals').add({...hospital})
   }
 
-  getDepartamet() {
+  getDepartamet(): Observable<any> {
     return this.store.collectionGroup('departaments').valueChanges()
   }
 
