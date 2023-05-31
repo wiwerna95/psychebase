@@ -16,7 +16,11 @@
     flex-direction: column;
 }
 .frame {
-    border: 1px solid #B5B5B5;
+    /* border: 1px solid #B5B5B5; */
     padding: 20px;
     margin: 0 auto;
+}
+
+h3 {
+    padding-top: 20px;
 }

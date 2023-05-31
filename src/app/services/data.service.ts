@@ -8,7 +8,7 @@ import { Hospital } from '../models/Hospital.model';
 @Injectable({
   providedIn: 'root'
 })
-export class HospitalService {
+export class DataService {
 
   constructor(private store: AngularFirestore, private http: HttpClient) { }
 
@@ -26,5 +26,9 @@ export class HospitalService {
 
   addDepartament(departament: Departament) {
     this.store.collection('/departaments').add({...departament});
+  }
+
+  getComments(): Observable<any> {
+    return this.store.collection('/comments').get();
   }
 }

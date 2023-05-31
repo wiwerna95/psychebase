@@ -1,4 +1,4 @@
-import { HospitalService } from '../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import {  Hospital } from 'src/app/models/Hospital.model';
 
@@ -11,7 +11,7 @@ export class AddHospitalComponent {
   hospital: Hospital = {};
   submitted = false;
 
-  constructor(private hospitalService: HospitalService) { }
+  constructor(private hospitalService: DataService) { }
 
   saveHospital(): void {
     this.hospitalService.create(this.hospital);

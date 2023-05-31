@@ -1,6 +1,6 @@
 import { Departament } from 'src/app/models/Departament.model';
 import { ActivatedRoute } from '@angular/router';
-import { HospitalService } from './../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hospital } from 'src/app/models/Hospital.model';
 
@@ -18,7 +18,7 @@ export class SingleHospitalComponent implements OnInit {
   public displayedColumns: string[] = ['Nazwa', 'Typ'];
 
 
-  constructor(private hospitalService: HospitalService,
+  constructor(private hospitalService: DataService,
             private route: ActivatedRoute) {
 
   }

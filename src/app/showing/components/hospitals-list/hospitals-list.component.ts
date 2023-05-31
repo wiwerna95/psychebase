@@ -2,7 +2,7 @@ import { CommunicationService } from './../../../services/communication-service.
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Hospital } from 'src/app/models/Hospital.model';
-import { HospitalService } from '../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, subscribeOn } from 'rxjs';
 import { ActivatedRoute, Route, RouterModule } from '@angular/router';
@@ -19,7 +19,7 @@ export class HospitalsListComponent implements OnInit {
   hospitals: Hospital[] = [];
   searchText: string = ''
 
-  constructor(private hospitalService: HospitalService, private communicationService: CommunicationService) { }
+  constructor(private hospitalService: DataService, private communicationService: CommunicationService) { }
 
   ngOnInit(): void {
     this.retrieveHospitals();

@@ -1,5 +1,5 @@
 import { Router, RouterModule } from '@angular/router';
-import { HospitalService } from './../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -35,7 +35,7 @@ export class VoivodeshipsSearchingComponent implements OnInit {
     'Województwo zachodniopomorskie'
   ];
 
-  constructor(private hospitalService:  HospitalService,
+  constructor(private hospitalService:  DataService,
               private router: Router) {}
 
   public ngOnInit() {

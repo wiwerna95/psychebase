@@ -1,1 +1,37 @@
-<p>comments works!</p>
+<div class="comment-container">
+    <div class="add-comment">
+        <form class="form">
+            <mat-form-field class="full-width">
+              <mat-label>Tytuł</mat-label>
+              <input matInput #message maxlength="250" >
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Nick</mat-label>
+                <input matInput #message maxlength="50" >
+  
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Treść</mat-label>
+                <input matInput #message maxlength="1000" >
+                <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+  
+              </mat-form-field>
+            <button mat-button mat-raised-button (click)="addComment()" color="success">Dodaj</button>
+
+          </form>
+    </div>
+    <div class="comment-section">
+        <mat-card *ngFor="let comment of comments">
+            <mat-card-header>
+              <mat-card-title>{{comment.title}}</mat-card-title>
+              <mat-card-subtitle>Dodane przez: {{comment.nick}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                {{comment.comment}}
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>
+

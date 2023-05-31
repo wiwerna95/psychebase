@@ -1,6 +1,6 @@
 import { QuerySnapshot } from '@angular/fire/compat/firestore';
 import { subscribeOn } from 'rxjs';
-import { HospitalService } from '../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hospital } from 'src/app/models/Hospital.model';
@@ -20,7 +20,7 @@ export class UpdateHospitalComponent implements OnInit {
   public departaments: Departament[] = [];
   public temporaryDepartament: Departament = new Departament;
 
-  constructor(private route: ActivatedRoute, private hospitalService: HospitalService) { }
+  constructor(private route: ActivatedRoute, private hospitalService: DataService) { }
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe((params) => {

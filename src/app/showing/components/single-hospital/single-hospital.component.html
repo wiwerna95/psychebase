@@ -30,13 +30,22 @@
                 <div>
                    
                     <h3>Dostępne oddziały: </h3>
-                    <mat-grid-list cols="1" rowHeight="10:1">
+                    <!-- <mat-grid-list cols="1" rowHeight="10:1">
                         <mat-grid-tile class="frame" *ngFor="let departament of departaments">
                           <p>Nazwa: {{departament.name}}</p>
                           <p>Typ: {{departament.type}}</p>
                           <app-departamet-rating></app-departamet-rating>
                         </mat-grid-tile>
-                      </mat-grid-list>
+                      </mat-grid-list> -->
+                      <mat-card *ngFor="let departament of departaments">
+                        <mat-card-header>
+                          <mat-card-title>{{departament.name}}</mat-card-title>
+                          <mat-card-subtitle>{{departament.type}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <app-departamet-rating></app-departamet-rating>
+                        </mat-card-content>
+                      </mat-card>
                 </div>
               </div>
 

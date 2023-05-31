@@ -1,4 +1,4 @@
-import { HospitalService } from './../../../services/hospital.service';
+import { DataService } from '../../../services/data.service';
 import { Hospital } from 'src/app/models/Hospital.model';
 import { CommunicationService } from './../../../services/communication-service.service';
 import { Component, EventEmitter, Output, OnInit, ViewEncapsulation } from '@angular/core';
@@ -18,7 +18,7 @@ export class SearchingBarComponent implements OnInit {
   public hospitals: Array<Hospital> = [];
 displayFn: any;
   constructor(private communicationService: CommunicationService,
-              private hospitalService: HospitalService) {}
+              private hospitalService: DataService) {}
 
 
   public ngOnInit(): void {
@@ -44,7 +44,6 @@ displayFn: any;
         hospitals.push(doc.data())
         
       })
-      console.log(hospitals)
       this.hospitals = hospitals;
       this.getAutocompleteList();
     })
