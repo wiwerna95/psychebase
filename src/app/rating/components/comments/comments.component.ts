@@ -9,11 +9,11 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CommentsComponent {
   public comments = [
-    {
-      nick: 'Ktoś obcy',
-      title: 'Porażka',
-      comment: 'lorem ipsum'
-    }
+    // {
+    //   nick: 'Ktoś obcy',
+    //   title: 'Porażka',
+    //   comment: 'lorem ipsum'
+    // }
   ];
 
   constructor(private data: DataService) {}

@@ -9,7 +9,7 @@ import { DepartametRatingComponent } from './components/departamet-rating/depart
 
 @NgModule({
   declarations: [
-    CommentsComponent,
+
     DepartametRatingComponent,
     HospitalRatingComponent
   ],
