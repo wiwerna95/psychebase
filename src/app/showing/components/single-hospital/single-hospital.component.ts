@@ -12,7 +12,7 @@ import { Hospital } from 'src/app/models/Hospital.model';
 })
 export class SingleHospitalComponent implements OnInit {
   public hospital: Hospital = new Hospital();
-  private name: any;
+  private hospitalParams: any;
   private sub: any;
   public departaments: Departament[] = [];
   public displayedColumns: string[] = ['Nazwa', 'Typ'];
@@ -25,7 +25,7 @@ export class SingleHospitalComponent implements OnInit {
 
   public ngOnInit() {
     this.sub = this.route.params.subscribe((params: any) => {
-      this.name = params;
+      this.hospitalParams = params;
       this.getAllHospitals();
       this.getAllDepartaments();
    });
@@ -36,7 +36,7 @@ export class SingleHospitalComponent implements OnInit {
   private getAllHospitals() {
     this.hospitalService.getAll().subscribe( data => {
       data.docs.forEach((doc: { data: () => Hospital }) => {
-       const hospitalFromRouting = this.name.hospital
+       const hospitalFromRouting = this.hospitalParams.hospital
        if (doc.data().name === hospitalFromRouting) {
         this.hospital = doc.data()
       }

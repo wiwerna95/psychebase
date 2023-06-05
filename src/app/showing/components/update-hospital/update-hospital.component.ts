@@ -16,7 +16,7 @@ export class UpdateHospitalComponent implements OnInit {
   public hospital: Hospital = new Hospital;
   public submitted: boolean = false;
   public sub: any;
-  public name: any;
+  public hospitalParams: any;
   public departaments: Departament[] = [];
   public temporaryDepartament: Departament = new Departament;
 
@@ -24,7 +24,7 @@ export class UpdateHospitalComponent implements OnInit {
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe((params) => {
-      this.name = params;
+      this.hospitalParams = params;
       this.searchHospital();
    });
   }
@@ -36,7 +36,7 @@ export class UpdateHospitalComponent implements OnInit {
         hospitals.push(doc.data())
       })
       hospitals.forEach( (hosp: Hospital) => {
-        if (hosp.name === this.name.name) {
+        if (hosp.name === this.hospitalParams.name) {
           this.hospital = hosp;
           this.getDepartamentsOfHospital();
         }

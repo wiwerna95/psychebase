@@ -1,5 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Comment } from '../../../models/Comment.model'
 
 @Component({
   selector: 'app-comments',
@@ -7,26 +9,42 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./comments.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CommentsComponent {
-  public comments = [
-    // {
-    //   nick: 'Ktoś obcy',
-    //   title: 'Porażka',
-    //   comment: 'lorem ipsum'
-    // }
-  ];
+export class CommentsComponent implements OnInit {
+  public comments: Comment[] = [];
+  public sub: any;
+  public hospitalParams: any;
+  public comment: Comment = {
+    title: '',
+    nick: '',
+    hospital: '',
+    comment: ''
+  };
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.sub = this.route.params.subscribe((params: any) => {
+      this.hospitalParams = params;
+      this.getAllComments();
+      ;
+   });
+    
+  }
 
   getAllComments() {
     this.data.getComments().subscribe( data => {
       data.docs.forEach((doc: { data: () => Comment; }) => {
-        console.log(doc.data());        
+        let data = doc.data();
+        if (this.hospitalParams.hospital === data.hospital) {
+          this.comments.push(data) 
+        }
       })
     })
   }
 
   addComment() {
-
+    this.comment.hospital = this.hospitalParams.hospital;
+    this.data.addComment(this.comment);
+    this.comment = {};
   }
 }

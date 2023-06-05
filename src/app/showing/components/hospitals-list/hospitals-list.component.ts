@@ -1,12 +1,7 @@
 import { CommunicationService } from './../../../services/communication-service.service';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { Hospital } from 'src/app/models/Hospital.model';
 import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { map, Observable, subscribeOn } from 'rxjs';
-import { ActivatedRoute, Route, RouterModule } from '@angular/router';
-import { QuerySnapshot } from '@angular/fire/compat/firestore';
 
 
 @Component({

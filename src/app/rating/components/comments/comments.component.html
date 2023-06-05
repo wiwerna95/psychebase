@@ -3,19 +3,18 @@
         <form class="form">
             <mat-form-field class="full-width">
               <mat-label>Tytuł</mat-label>
-              <input matInput #message maxlength="250" >
+              <input matInput maxlength="250" [(ngModel)]="comment.title" name="title" >
             </mat-form-field>
 
             <mat-form-field class="full-width">
                 <mat-label>Nick</mat-label>
-                <input matInput #message maxlength="50" >
+                <input matInput maxlength="50" [(ngModel)]="comment.nick" name="nick">
   
               </mat-form-field>
 
               <mat-form-field class="full-width">
                 <mat-label>Treść</mat-label>
-                <input matInput #message maxlength="1000" >
-                <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+                <input matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment">
   
               </mat-form-field>
             <button mat-button mat-raised-button (click)="addComment()" color="success">Dodaj</button>

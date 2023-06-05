@@ -1,3 +1,4 @@
+import { Comment } from './../models/Comment.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
@@ -30,5 +31,9 @@ export class DataService {
 
   getComments(): Observable<any> {
     return this.store.collection('/comments').get();
+  }
+
+  addComment(comment: Comment) {
+    this.store.collection('/comments').add({...comment});
   }
 }
