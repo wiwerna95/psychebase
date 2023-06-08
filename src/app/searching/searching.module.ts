@@ -7,6 +7,9 @@ import { VoivodeshipsSearchingComponent } from './components/voivodeships-search
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,6 +26,9 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     SearchingRoutingModule,
     RouterModule,
+    MatIconModule,
+    MatTooltipModule,
+    ReactiveFormsModule
  ]
 })
 export class SearchingModule { }

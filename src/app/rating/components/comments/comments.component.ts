@@ -31,6 +31,7 @@ export class CommentsComponent implements OnInit {
     
   }
 
+
   getAllComments() {
     this.data.getComments().subscribe( data => {
       data.docs.forEach((doc: { data: () => Comment; }) => {
@@ -45,6 +46,7 @@ export class CommentsComponent implements OnInit {
   addComment() {
     this.comment.hospital = this.hospitalParams.hospital;
     this.data.addComment(this.comment);
+    this.comments.push(this.comment)
     this.comment = {};
   }
 }

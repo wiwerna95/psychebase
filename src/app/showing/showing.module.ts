@@ -8,7 +8,7 @@ import { HospitalsListComponent } from './components/hospitals-list/hospitals-li
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ShowingRoutingModule } from './showing-routing.module';
 import { SearchingBarComponent } from '../searching/components/searching-bar/searching-bar.component';
@@ -16,6 +16,8 @@ import { SingleHospitalComponent } from './components/single-hospital/single-hos
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -42,8 +44,10 @@ import { MatTableModule } from '@angular/material/table';
     MatGridListModule,
     ShowingRoutingModule,
     MatTableModule,
-    MatExpansionModule
-
+    MatExpansionModule,
+    MatIconModule,
+    MatTooltipModule,
+    ReactiveFormsModule
   
     
   ]
