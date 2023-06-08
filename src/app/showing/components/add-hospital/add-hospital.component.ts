@@ -14,6 +14,7 @@ export class AddHospitalComponent {
   constructor(private hospitalService: DataService) { }
 
   saveHospital(): void {
+    this.hospital.rating = 0;
     this.hospitalService.create(this.hospital);
     this.hospital = new Hospital;
     this.submitted = true;

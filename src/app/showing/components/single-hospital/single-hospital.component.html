@@ -26,7 +26,7 @@
                 </mat-grid-tile>
               </mat-grid-list>
               <div>
-                <app-hosptial-rating></app-hosptial-rating>                
+                <app-hosptial-rating (addedRating)="putRating($event)" [hospitalRating] = 'hospital' ></app-hosptial-rating>                
                 <div>
                    
                     <h3>Dostępne oddziały: </h3>

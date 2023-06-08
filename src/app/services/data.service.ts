@@ -5,6 +5,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { map, Observable, of, subscribeOn, tap, pipe } from 'rxjs';
 import { Departament } from '../models/Departament.model';
 import { Hospital } from '../models/Hospital.model';
+import { SingleRating } from '../models/SingleRating.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +37,13 @@ export class DataService {
   addComment(comment: Comment) {
     this.store.collection('/comments').add({...comment});
   }
+
+  putRating(hospital: any) {
+    this.store.collection('/hospitals').doc(`${hospital.id}`).update({rating: hospital.rating});
+  }
+
+  putSingleRating(rating: SingleRating) {
+    this.store.collection('/ratings').add({...rating})
+  }
+
 }

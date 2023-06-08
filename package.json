@@ -24,6 +24,7 @@
     "firebase": "^9.9.1",
     "mini-css-extract-plugin": "^2.7.6",
     "ng2-search-filter": "^0.5.1",
+    "ngx-material-rating": "^2.0.0",
     "ngx-star-rating": "^2.1.0",
     "postcss-loader": "^7.3.2",
     "rxjs": "~7.5.0",

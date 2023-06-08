@@ -1,7 +1,7 @@
 import { Departament } from 'src/app/models/Departament.model';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../services/data.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hospital } from 'src/app/models/Hospital.model';
 
 @Component({
@@ -14,6 +14,7 @@ export class SingleHospitalComponent implements OnInit {
   public hospital: Hospital = new Hospital();
   private hospitalParams: any;
   private sub: any;
+  public hospital1: any;
   public departaments: Departament[] = [];
   public displayedColumns: string[] = ['Nazwa', 'Typ'];
 
@@ -28,6 +29,7 @@ export class SingleHospitalComponent implements OnInit {
       this.hospitalParams = params;
       this.getAllHospitals();
       this.getAllDepartaments();
+      this.hospital1 = this.hospital;
    });
    
    
@@ -54,6 +56,12 @@ export class SingleHospitalComponent implements OnInit {
      
     })
     return this.departaments;
+  }
+
+  public putRating(event: any) {
+    this.hospital.rating = event;
+    this.hospitalService.putRating(this.hospital)
+
   }
 }
 

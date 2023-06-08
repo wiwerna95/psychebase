@@ -1,61 +1,62 @@
-import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { Hospital } from 'src/app/models/Hospital.model';
+import { DataService } from 'src/app/services/data.service';
+import { SingleRating } from 'src/app/models/SingleRating.model'
 
 @Component({
   selector: 'app-hosptial-rating',
   templateUrl: './hosptial-rating.component.html',
   styleUrls: ['./hosptial-rating.component.css'],
-  providers: [ {provide, useValue: "stringValue"}],
 })
-export class HospitalRatingComponent implements OnInit {
-  form: FormGroup;
-  
+export class HospitalRatingComponent implements OnInit, OnChanges {
+  @Input() hospitalRating: any;
+  @Output() addedRating = new EventEmitter<any>();
+  public rating: any;
+  public isClicked = false;
+  private singleRating: SingleRating= new SingleRating;
 
-  @Input('rating') public rating: number = 3;
-  @Input('starCount') public starCount: number = 5;
-  @Input('color') public color: string = 'accent';
-  @Output() private ratingUpdated = new EventEmitter();
-  private snackBarDuration: number = 2000;
-  public ratingArr: number[] = [];ngOnInit() {
-    console.log("a "+this.starCount)
-    for (let index: number = 0; index < this.starCount; index++) {
-      this.ratingArr.push(index);
-    }
-  }
-
-  constructor(private snackBar: MatSnackBar, private fb: FormBuilder) {
-    this.form = this.fb.group({
-      rating: ['', Validators.required],
-    })
-  }
 
   
-  onClick(rating:number) {
-    console.log(rating)
-    this.snackBar.open('You rated ' + rating + ' / ' + this.starCount, '', {
-      duration: this.snackBarDuration
-    });
-    this.ratingUpdated.emit(rating);
-    return false;
+  ngOnInit() {
+   
   }
 
-  showIcon(index:number) {
-    console.log(index)
-    if (this.rating >= index + 1) {
-      return 'star';
-    } else {
-      return 'star_border';
+  ngOnChanges() {
+    console.log(this.hospitalRating)
+    if (this.hospitalRating.address !== undefined) {
+      this.getRating()
+    }
+
+  }
+
+  constructor(private hospitalService: DataService) {
+  }
+  getRating() {
+    console.log('get')
+      this.hospitalService.getAll().subscribe( data => {
+        data.docs.forEach((doc: { data: () => Hospital; }) => {
+          if (doc.data().name ===  this.hospitalRating.name) {
+            this.rating = doc.data().rating;
+          }
+        })
+      })
+    }
+
+  putRating() {
+    console.log(this.rating)
+    this.isClicked = true;
+    this.addedRating.emit(this.rating)
+  }
+
+  calculateRating() {
+    this.singleRating = {
+      hospital: this.hospitalRating.name,
+      rating: this.rating
     }
   }
+}
 
-}
-export enum StarRatingColor {
-  primary = "primary",
-  accent = "accent",
-  warn = "warn"
-}
-function provide(string: any, arg1: { useValue: string; }): import("@angular/core").Provider {
-  throw new Error('Function not implemented.');
-}
 
