@@ -51,4 +51,12 @@ export class DataService {
     return this.store.collection('/ratings').get();
   }
 
+  getAllDepartamentRatings() {
+
+  }
+
+  putDepartamentRating() {
+    
+  }
+
 }
