@@ -49,25 +49,29 @@ export class VoivodeshipsSearchingComponent implements OnInit {
         hospital = data;
         hospital.id = id;
 
-          this.hospitals.push(hospital)   
-
-      for (let wojewodztwo of this.voivodeships) {
-        const array: Hospital[] = []
-        const object = {
-          voivodeship: wojewodztwo,
-          hospitals: array
-        }
-        for (let hospital of this.hospitals) {
-          if (hospital.voivodeship === wojewodztwo) {
-            object.hospitals.push(hospital)
-          }
-        }
-        this.arrayWithVoivodeships.push(object)
-      }
+        this.hospitals.push(hospital)   
       });
+      this.showAllVoivodeshps()
    })
+  
   }
 
+
+  showAllVoivodeshps() {
+    for (let wojewodztwo of this.voivodeships) {
+      const array: Hospital[] = []
+      const object = {
+        voivodeship: wojewodztwo,
+        hospitals: array
+      }
+      for (let hospital of this.hospitals) {
+        if (hospital.voivodeship === wojewodztwo) {
+          object.hospitals.push(hospital)
+        }
+      }
+      this.arrayWithVoivodeships.push(object)
+    }
+  }
 
   redirectToHospital(hospital: Hospital) {
     this.router.navigate(['/show', hospital.name])

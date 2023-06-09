@@ -1,2 +1,16 @@
-<ngx-star-rating [id]="'rating'" [disabled]="true" [(ngModel)]=rating></ngx-star-rating>
-<ngx-star-rating [id]="'ratingForUser'" [disabled]="isClicked" [(ngModel)]=ratingForUser (ngModelChange)="calculateRating()"></ngx-star-rating>
+<ul>
+    <li>
+        <div>
+            <p>Rating ogólny:</p>
+            <ngx-star-rating [id]="'rating'" [disabled]="true" [(ngModel)]=rating></ngx-star-rating>
+        </div>
+    
+    </li>
+    <li>
+        <div>
+            <p>Twój rating:</p>
+            <ngx-star-rating [id]="'ratingForUser'" [disabled]="isClicked" [(ngModel)]=ratingForUser (ngModelChange)="calculateRating()"></ngx-star-rating>
+    </div>
+      
+    </li>
+</ul>

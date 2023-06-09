@@ -6,8 +6,16 @@
     src: url('../src/assets/Roboto/Roboto-Regular.ttf');
 }
 body {
-    background-color: #f2f2f2;
+    background-color: #535454;
     font-family: Roboto;
     margin: 0px;
 }
 
+.psychebase-button {
+    background-color: #007B4F;
+    color: white;
+    /* height: 70px; */
+    width: 150px;
+    padding: 10px;
+    
+}

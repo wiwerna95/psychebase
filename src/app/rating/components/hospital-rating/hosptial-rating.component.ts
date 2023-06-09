@@ -1,7 +1,4 @@
-import { Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Hospital } from 'src/app/models/Hospital.model';
 import { DataService } from 'src/app/services/data.service';
 import { SingleRating } from 'src/app/models/SingleRating.model'
@@ -11,7 +8,7 @@ import { SingleRating } from 'src/app/models/SingleRating.model'
   templateUrl: './hosptial-rating.component.html',
   styleUrls: ['./hosptial-rating.component.css'],
 })
-export class HospitalRatingComponent implements OnInit, OnChanges {
+export class HospitalRatingComponent implements OnChanges {
   @Input() hospitalRating: any;
   @Output() addedRating = new EventEmitter<any>();
   public rating: number = 0;
@@ -20,19 +17,15 @@ export class HospitalRatingComponent implements OnInit, OnChanges {
   ratingsForHospital: SingleRating[] = []
   ratingForUser: number = 0;
   
-  ngOnInit() {
-   
+  constructor(private hospitalService: DataService) {
   }
 
   ngOnChanges() {
     if (this.hospitalRating.address !== undefined) {
       this.getRating()
     }
-
   }
 
-  constructor(private hospitalService: DataService) {
-  }
   getRating() {
     this.hospitalService.getAll()
     .subscribe( data => {
@@ -60,7 +53,6 @@ export class HospitalRatingComponent implements OnInit, OnChanges {
       hospital: this.hospitalRating.name,
       rating: this.ratingForUser
     }
-    console.log(this.hospitalRating.name)
 
     this.hospitalService.putSingleRating(this.singleRating)
     this.hospitalService.getAllRatings().subscribe( (data: any) => {
@@ -73,12 +65,10 @@ export class HospitalRatingComponent implements OnInit, OnChanges {
          rating = rating + x.rating!
         })
         rating = Math.round(rating/ratingsForHospitalLength);
-        console.log('rating', rating)
         this.rating = rating;
         }
       })
       this.hospitalRating.rating = this.rating;
-      console.log('hospital ', this.hospitalRating)
       this.hospitalService.putRating(this.hospitalRating);
       
     })
