@@ -14,18 +14,17 @@ import { SingleRating } from 'src/app/models/SingleRating.model'
 export class HospitalRatingComponent implements OnInit, OnChanges {
   @Input() hospitalRating: any;
   @Output() addedRating = new EventEmitter<any>();
-  public rating: any;
+  public rating: number = 0;
   public isClicked = false;
   private singleRating: SingleRating= new SingleRating;
-
-
+  ratingsForHospital: SingleRating[] = []
+  ratingForUser: number = 0;
   
   ngOnInit() {
    
   }
 
   ngOnChanges() {
-    console.log(this.hospitalRating)
     if (this.hospitalRating.address !== undefined) {
       this.getRating()
     }
@@ -35,18 +34,23 @@ export class HospitalRatingComponent implements OnInit, OnChanges {
   constructor(private hospitalService: DataService) {
   }
   getRating() {
-    console.log('get')
-      this.hospitalService.getAll().subscribe( data => {
-        data.docs.forEach((doc: { data: () => Hospital; }) => {
-          if (doc.data().name ===  this.hospitalRating.name) {
-            this.rating = doc.data().rating;
-          }
-        })
-      })
-    }
+    this.hospitalService.getAll()
+    .subscribe( data => {
+      data.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+        hospital = data;
+        hospital.id = id;
+
+        if (data.name ===  this.hospitalRating.name) {
+          this.rating = data.rating;
+        }
+      });
+    })    
+  }
 
   putRating() {
-    console.log(this.rating)
     this.isClicked = true;
     this.addedRating.emit(this.rating)
   }
@@ -54,8 +58,31 @@ export class HospitalRatingComponent implements OnInit, OnChanges {
   calculateRating() {
     this.singleRating = {
       hospital: this.hospitalRating.name,
-      rating: this.rating
+      rating: this.ratingForUser
     }
+    console.log(this.hospitalRating.name)
+
+    this.hospitalService.putSingleRating(this.singleRating)
+    this.hospitalService.getAllRatings().subscribe( (data: any) => {
+      data.docs.forEach((doc: { data: () => SingleRating; }) => {
+        if (doc.data().hospital === this.hospitalRating.name) {
+          this.ratingsForHospital.push(doc.data())
+          let rating: number = 0;
+        let ratingsForHospitalLength = this.ratingsForHospital.length;
+        this.ratingsForHospital.forEach((x: SingleRating) => {
+         rating = rating + x.rating!
+        })
+        rating = Math.round(rating/ratingsForHospitalLength);
+        console.log('rating', rating)
+        this.rating = rating;
+        }
+      })
+      this.hospitalRating.rating = this.rating;
+      console.log('hospital ', this.hospitalRating)
+      this.hospitalService.putRating(this.hospitalRating);
+      
+    })
+
   }
 }
 

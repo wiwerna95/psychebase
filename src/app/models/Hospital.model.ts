@@ -5,7 +5,7 @@ export class Hospital {
    description?: string;
    director?: string;
    email?: string;
-   id?: number;
+   id?: string;
    logo?: string;
    name?: string;
    phone?: number;

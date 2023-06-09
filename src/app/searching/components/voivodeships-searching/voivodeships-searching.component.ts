@@ -39,13 +39,17 @@ export class VoivodeshipsSearchingComponent implements OnInit {
               private router: Router) {}
 
   public ngOnInit() {
-    this.hospitalService.getAll().subscribe( data => {
-      const hospitals: Hospital[] = [];
-      data.docs.forEach((doc: { data: () => Hospital; }) => {
-        hospitals.push(doc.data())
-        
-      })
-      this.hospitals = hospitals;    
+    this.hospitalService.getAll()
+    .subscribe( data => {
+     data.map(a => {
+     
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+        hospital = data;
+        hospital.id = id;
+
+          this.hospitals.push(hospital)   
 
       for (let wojewodztwo of this.voivodeships) {
         const array: Hospital[] = []
@@ -60,7 +64,8 @@ export class VoivodeshipsSearchingComponent implements OnInit {
         }
         this.arrayWithVoivodeships.push(object)
       }
-    })
+      });
+   })
   }
 
 
