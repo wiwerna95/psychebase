@@ -53,3 +53,7 @@ h3 {
 .card {
     border: 1px solid black;
 }
+
+.hospitals-comments {
+    padding: 40px;
+}

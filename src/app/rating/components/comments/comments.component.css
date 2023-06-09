@@ -1,5 +1,17 @@
+.comment-contaner {
+  padding: 40px;
+}
+
+.comment-section {
+  padding: 80px;
+}
+
+.card {
+  border: 1px solid #323940;
+}
+
 .form {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
   }
@@ -18,3 +30,13 @@
     padding: 20px;
     margin: 20px auto;
   }
+
+  .psychebase-button {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .add-comment {
+    border: 1px solid #323940;
+  }
+  

@@ -2,7 +2,7 @@
 
 
 <div class="accordion-container">
-    <h3> Wyszukaj szpital po województwie </h3>
+    <h2> Wyszukaj szpital po województwie </h2>
     <cdk-accordion class="example-accordion">
         <cdk-accordion-item
           *ngFor="let item of arrayWithVoivodeships; let index = index;"
@@ -27,8 +27,9 @@
             [attr.aria-labelledby]="'accordion-header-' + index">
             <ul *ngFor="let hospital of item.hospitals">
                 <li>
-                    <h4>{{hospital.name}}</h4>
-                    <button class="btn btn-stroked"  (click)="redirectToHospital(hospital)">Zobacz</button>
+                    <h4><b>{{hospital.name}}</b> </h4>
+                    <p> {{hospital.city}}
+                    <div class="psychebase-button"  (click)="redirectToHospital(hospital)">Zobacz</div>
                 </li>
             </ul>
           </div>

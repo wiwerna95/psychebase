@@ -26,9 +26,8 @@ export class CommentsComponent implements OnInit {
     this.sub = this.route.params.subscribe((params: any) => {
       this.hospitalParams = params;
       this.getAllComments();
-      ;
    });
-    
+    console.log(this.comments)
   }
 
 

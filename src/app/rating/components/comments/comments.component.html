@@ -1,28 +1,7 @@
 <div class="comment-container">
-    <div class="add-comment">
-        <form class="form">
-            <mat-form-field class="full-width">
-              <mat-label>Tytuł</mat-label>
-              <input matInput maxlength="250" [(ngModel)]="comment.title" name="title" >
-            </mat-form-field>
-
-            <mat-form-field class="full-width">
-                <mat-label>Nick</mat-label>
-                <input matInput maxlength="50" [(ngModel)]="comment.nick" name="nick">
-  
-              </mat-form-field>
-
-              <mat-form-field class="full-width">
-                <mat-label>Treść</mat-label>
-                <input matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment">
-  
-              </mat-form-field>
-            <button mat-button mat-raised-button (click)="addComment()" color="success">Dodaj</button>
-
-          </form>
-    </div>
-    <div class="comment-section">
-        <mat-card *ngFor="let comment of comments">
+   
+    <div class="comment-section" *ngIf="comments.length > 1" >
+        <mat-card class="card" *ngFor="let comment of comments">
             <mat-card-header>
               <mat-card-title>{{comment.title}}</mat-card-title>
               <mat-card-subtitle>Dodane przez: {{comment.nick}}</mat-card-subtitle>
@@ -32,5 +11,32 @@
             </mat-card-content>
           </mat-card>
     </div>
+    <div *ngIf="comments.length === 1">
+      Brak komentarzy.
+    </div>
+   
+    <div class="add-comment">
+      <h3> Dodaj opinię</h3>
+      <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>Tytuł</mat-label>
+            <input matInput maxlength="250" [(ngModel)]="comment.title" name="title" >
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+              <mat-label>Nick</mat-label>
+              <input matInput maxlength="50" [(ngModel)]="comment.nick" name="nick">
+
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Treść</mat-label>
+              <input matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment">
+
+            </mat-form-field>
+          <div class="psychebase-button" mat-button mat-raised-button (click)="addComment()" color="success">Dodaj</div>
+
+        </form>
+  </div>
 </div>
 
