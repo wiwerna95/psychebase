@@ -28,9 +28,16 @@ export class HospitalsListComponent implements OnInit {
   retrieveHospitals(): void {
     this.hospitalService.getAll()
     .subscribe( data => {
-      data.docs.forEach((doc: { data: () => Hospital; }) => {
-        this.hospitals.push(doc.data())
-      })
-    })
+     data.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+
+        hospital = data;
+        hospital.id = id;
+        
+        this.hospitals.push(hospital);
+      });
+   })
   }
 }

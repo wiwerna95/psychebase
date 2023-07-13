@@ -30,19 +30,26 @@ export class UpdateHospitalComponent implements OnInit {
   }
 
   private searchHospital() {
-    this.hospitalService.getAll().subscribe( data => {
+    this.hospitalService.getAll()
+    .subscribe( data => {
+     data.map(a => {
       const hospitals: Hospital[] = [];
-      data.docs.forEach((doc: { data: () => Hospital; }) => {
-        hospitals.push(doc.data())
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+        hospital = data;
+        hospital.id = id;
+        
+        hospitals.push(hospital);
+        hospitals.forEach( (hosp: Hospital) => {
+              if (hosp.name === this.hospitalParams.name) {
+                this.hospital = hosp;
+                this.getDepartamentsOfHospital();
+              }
+        });
       })
-      hospitals.forEach( (hosp: Hospital) => {
-        if (hosp.name === this.hospitalParams.name) {
-          this.hospital = hosp;
-          this.getDepartamentsOfHospital();
-        }
-      })
-      
     })
+      
   }
 
   getDepartamentsOfHospital() {
@@ -60,5 +67,4 @@ export class UpdateHospitalComponent implements OnInit {
 
     this.hospitalService.addDepartament(departament);
   }
-
 }

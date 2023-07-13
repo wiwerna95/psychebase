@@ -39,30 +39,39 @@ export class VoivodeshipsSearchingComponent implements OnInit {
               private router: Router) {}
 
   public ngOnInit() {
-    this.hospitalService.getAll().subscribe( data => {
-      const hospitals: Hospital[] = [];
-      data.docs.forEach((doc: { data: () => Hospital; }) => {
-        hospitals.push(doc.data())
-        
-      })
-      this.hospitals = hospitals;    
+    this.hospitalService.getAll()
+    .subscribe( data => {
+     data.map(a => {
+     
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+        hospital = data;
+        hospital.id = id;
 
-      for (let wojewodztwo of this.voivodeships) {
-        const array: Hospital[] = []
-        const object = {
-          voivodeship: wojewodztwo,
-          hospitals: array
-        }
-        for (let hospital of this.hospitals) {
-          if (hospital.voivodeship === wojewodztwo) {
-            object.hospitals.push(hospital)
-          }
-        }
-        this.arrayWithVoivodeships.push(object)
-      }
-    })
+        this.hospitals.push(hospital)   
+      });
+      this.showAllVoivodeshps()
+   })
+  
   }
 
+
+  showAllVoivodeshps() {
+    for (let wojewodztwo of this.voivodeships) {
+      const array: Hospital[] = []
+      const object = {
+        voivodeship: wojewodztwo,
+        hospitals: array
+      }
+      for (let hospital of this.hospitals) {
+        if (hospital.voivodeship === wojewodztwo) {
+          object.hospitals.push(hospital)
+        }
+      }
+      this.arrayWithVoivodeships.push(object)
+    }
+  }
 
   redirectToHospital(hospital: Hospital) {
     this.router.navigate(['/show', hospital.name])

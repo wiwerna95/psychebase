@@ -1,15 +1,21 @@
+h2 {
+  color:#eee;
+  text-align: center
+}
+
 .accordion-container {
     padding: 50px;
 }
 
 .example-accordion {
     display: block;
-    max-width: 500px;
   }
   
   .example-accordion-item {
     display: block;
     border: solid 1px #ccc;
+    background-color: #fafafa;
+    margin: 30px;
   }
   
   .example-accordion-item + .example-accordion-item {
@@ -49,5 +55,21 @@
 
   ul li {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
   }
   
+  ul li h4 {
+    width: 50%;
+  }
+
+  ul li p {
+    width: 20%;
+  }
+
+  .psychebase-button {
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 30px;
+  }

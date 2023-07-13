@@ -38,15 +38,20 @@ displayFn: any;
   }
 
   private getAllHospitals() {
-    this.hospitalService.getAll().subscribe( data => {
-      const hospitals: Hospital[] = [];
-      data.docs.forEach((doc: { data: () => Hospital; }) => {
-        hospitals.push(doc.data())
-        
-      })
-      this.hospitals = hospitals;
-      this.getAutocompleteList();
-    })
+    this.hospitalService.getAll()
+    .subscribe( data => {
+     data.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        let hospital: Hospital;
+        hospital = data;
+        hospital.id = id;
+
+        this.hospitals.push(hospital)
+      });
+   })
+  this.getAutocompleteList();
+
   }
 
 

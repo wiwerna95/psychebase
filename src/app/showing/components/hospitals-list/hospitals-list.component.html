@@ -1,5 +1,5 @@
 
-
+<h1> Lista wszystkich szpitali psychiatrycznych w Polsce</h1>
 <ul>
   <app-searching-bar></app-searching-bar>
   <li *ngFor="let hospital of hospitals">
@@ -7,13 +7,13 @@
       <mat-card-header>
         <mat-card-title class=""><b>{{hospital.name}}</b></mat-card-title>
         <mat-card-subtitle>{{hospital.address}}, {{hospital.city}}</mat-card-subtitle>
+        <mat-card-subtitle>{{hospital.voivodeship}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        {{hospital.description}}
       </mat-card-content>
-      <mat-card-actions>
-        <button class="btn btn-stroked" mat-button [routerLink]="['/update', hospital.name]">Dodaj oddział</button>
-        <button class="btn btn-stroked" [routerLink]="['/show', hospital.name]" mat-button>Zobacz</button>
+      <mat-card-actions class="actions">
+        <div class="psychebase-button" [routerLink]="['/update', hospital.name]">Dodaj oddział</div>
+        <div class="psychebase-button" [routerLink]="['/show', hospital.name]"><h3><b>Odwiedź i oceń</b></h3></div>
       </mat-card-actions>
     </mat-card>
    

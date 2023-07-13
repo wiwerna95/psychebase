@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    color: white;
+}
+
 ul li {
     list-style-type: none;
 }
@@ -5,4 +10,14 @@ ul li {
 .card {
     width: 50%;
     margin: 20px auto;
+    padding: 50px;
 }
+
+.mat-card-actions {
+    background-color: red;
+}
+
+.actions {
+    margin: 0 auto;
+}
+

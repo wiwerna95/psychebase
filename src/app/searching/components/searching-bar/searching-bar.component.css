@@ -1,6 +1,6 @@
 .search-bar-container {
     margin: 20px auto;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -19,8 +19,21 @@
 .mat-mdc-form-field  {
    width: 100%;
 }
- h3 {
+
+button {
+    background-color: white;
+}
+
+h3 {
     text-align: center;
- }
+    color: white;
+}
+.psychebase-button {
+    background-color: #007B4F;
+    color: white;
+    height: 50px;
+    width: 150px;
+    
+}
 
 

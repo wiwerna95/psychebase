@@ -14,9 +14,10 @@ export class DataService {
 
   constructor(private store: AngularFirestore, private http: HttpClient) { }
 
-  getAll(): Observable<any>{
-    return this.store.collection('/hospitals').get();
-}
+  getAll() {
+    return this.store.collection<any>('hospitals').snapshotChanges();
+
+  }
 
   create(hospital: Hospital) {
     this.store.collection('/hospitals').add({...hospital})
@@ -44,6 +45,18 @@ export class DataService {
 
   putSingleRating(rating: SingleRating) {
     this.store.collection('/ratings').add({...rating})
+  }
+
+  getAllRatings() {
+    return this.store.collection('/ratings').get();
+  }
+
+  getAllDepartamentRatings() {
+
+  }
+
+  putDepartamentRating() {
+    
   }
 
 }

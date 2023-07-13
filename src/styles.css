@@ -5,9 +5,22 @@
     font-family: Roboto;
     src: url('../src/assets/Roboto/Roboto-Regular.ttf');
 }
+
+@font-face {
+    font-family: Monserrat;
+    src: url('../src/assets/Montserrat/static/Montserrat-Medium.ttf');
+}
 body {
-    background-color: #f2f2f2;
-    font-family: Roboto;
+    background-color: #535454;
+    font-family: Monserrat;
     margin: 0px;
 }
 
+.psychebase-button {
+    background-color: #007B4F;
+    color: #fafafa;
+    height: 37px;
+    width: 150px;
+    padding: 10px;
+    
+}

@@ -18,7 +18,6 @@ export class SingleHospitalComponent implements OnInit {
   public departaments: Departament[] = [];
   public displayedColumns: string[] = ['Nazwa', 'Typ'];
 
-
   constructor(private hospitalService: DataService,
             private route: ActivatedRoute) {
 
@@ -36,14 +35,19 @@ export class SingleHospitalComponent implements OnInit {
   }
 
   private getAllHospitals() {
-    this.hospitalService.getAll().subscribe( data => {
-      data.docs.forEach((doc: { data: () => Hospital }) => {
-       const hospitalFromRouting = this.hospitalParams.hospital
-       if (doc.data().name === hospitalFromRouting) {
-        this.hospital = doc.data()
-      }
-      })
-    })
+    this.hospitalService.getAll()
+    .subscribe( data => {
+     data.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        const hospitalFromRouting = this.hospitalParams.hospital;
+
+        if (data.name === hospitalFromRouting) {
+          this.hospital = data;
+          this.hospital.id = id;
+        }
+      });
+   })
   }
 
   private getAllDepartaments(): Departament[] {
@@ -61,7 +65,6 @@ export class SingleHospitalComponent implements OnInit {
   public putRating(event: any) {
     this.hospital.rating = event;
     this.hospitalService.putRating(this.hospital)
-
   }
 }
 
