@@ -1,4 +1,3 @@
-import { DepartametRatingComponent } from './../rating/components/departamet-rating/departamet-rating.component';
 import { HospitalRatingComponent } from '../rating/components/hospital-rating/hosptial-rating.component';
 import { CommentsComponent } from './../rating/components/comments/comments.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +29,6 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     SearchingBarComponent,
     SingleHospitalComponent,
     HospitalRatingComponent,
-    DepartametRatingComponent,
     CommentsComponent
     
   ],

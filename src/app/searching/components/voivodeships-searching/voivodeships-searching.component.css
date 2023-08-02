@@ -1,5 +1,5 @@
 h2 {
-  color:#eee;
+  color:#007B4F;
   text-align: center
 }
 
@@ -68,8 +68,3 @@ h2 {
     width: 20%;
   }
 
-  .psychebase-button {
-    margin-bottom: 20px;
-    text-align: center;
-    padding-top: 30px;
-  }

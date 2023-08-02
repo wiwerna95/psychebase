@@ -10,10 +10,11 @@
         <mat-card-subtitle>{{hospital.voivodeship}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
+        {{hospital.description}}
       </mat-card-content>
       <mat-card-actions class="actions">
         <div class="psychebase-button" [routerLink]="['/update', hospital.name]">Dodaj oddział</div>
-        <div class="psychebase-button" [routerLink]="['/show', hospital.name]"><h3><b>Odwiedź i oceń</b></h3></div>
+        <div class="psychebase-button" [routerLink]="['/show', hospital.name]">Odwiedź i oceń</div>
       </mat-card-actions>
     </mat-card>
    

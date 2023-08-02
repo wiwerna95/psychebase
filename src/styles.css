@@ -11,7 +11,7 @@
     src: url('../src/assets/Montserrat/static/Montserrat-Medium.ttf');
 }
 body {
-    background-color: #535454;
+    background-color: #CFCFCF;
     font-family: Monserrat;
     margin: 0px;
 }
@@ -19,8 +19,8 @@ body {
 .psychebase-button {
     background-color: #007B4F;
     color: #fafafa;
-    height: 37px;
-    width: 150px;
+    height: 20px;
+    /* width: 150px; */
     padding: 10px;
-    
+    text-align: center;
 }

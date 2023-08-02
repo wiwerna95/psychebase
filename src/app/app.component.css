@@ -3,11 +3,16 @@
   height: 80px;
   width: 80px;
   margin-top: 5px;
+
 }
 
 .toolbar {
   height: 88px;
   background-color: white;
+  flex: 1 1 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;;
 }
 
 a {

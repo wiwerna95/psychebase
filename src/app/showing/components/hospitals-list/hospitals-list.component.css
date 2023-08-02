@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    color: white;
+    color: #007B4F;
 }
 
 ul li {
@@ -8,7 +8,7 @@ ul li {
 }
 
 .card {
-    width: 50%;
+    width: 90%;
     margin: 20px auto;
     padding: 50px;
 }
@@ -19,5 +19,10 @@ ul li {
 
 .actions {
     margin: 0 auto;
+}
+
+.psychebase-button {
+    width: 150px;
+    margin: 0px 20px;   
 }
 
