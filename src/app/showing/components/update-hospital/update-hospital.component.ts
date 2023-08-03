@@ -18,7 +18,7 @@ export class UpdateHospitalComponent implements OnInit {
   public sub: any;
   public hospitalParams: any;
   public departaments: Departament[] = [];
-  public temporaryDepartament: Departament = new Departament;
+  public temporaryDepartament: Departament = new Departament(1);
 
   constructor(private route: ActivatedRoute, private hospitalService: DataService) { }
 
@@ -63,6 +63,7 @@ export class UpdateHospitalComponent implements OnInit {
       name: this.temporaryDepartament.name,
       type: this.temporaryDepartament.type,
       hospitalName: this.hospital.name,
+      number: this.temporaryDepartament.number
     }
 
     this.hospitalService.addDepartament(departament);

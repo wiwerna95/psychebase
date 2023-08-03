@@ -3,10 +3,10 @@
     <div class="comment-section" *ngIf="comments.length > 1" >
         <mat-card class="card" *ngFor="let comment of comments">
             <mat-card-header>
-              <mat-card-title>{{comment.title}}</mat-card-title>
-              <mat-card-subtitle>Dodane przez: {{comment.nick}}</mat-card-subtitle>
+              <mat-card-title style="padding: 10px; font-weight: bold;">{{comment.title}}</mat-card-title>
+              <mat-card-subtitle  style="padding: 10px;">Dodane przez: {{comment.nick}}</mat-card-subtitle>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content  style="padding: 10px;">
                 {{comment.comment}}
             </mat-card-content>
           </mat-card>
@@ -16,7 +16,7 @@
     </div>
    
     <div class="add-comment">
-      <h3> Dodaj opinię</h3>
+      <h2> DODAJ KOMENTARZ</h2>
       <form class="form">
           <mat-form-field class="full-width">
             <mat-label>Tytuł</mat-label>
@@ -31,7 +31,7 @@
 
             <mat-form-field class="full-width">
               <mat-label>Treść</mat-label>
-              <input matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment">
+              <textarea type="text" matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment"> </textarea>
 
             </mat-form-field>
           <div class="psychebase-button" mat-button mat-raised-button (click)="addComment()" color="success">Dodaj</div>

@@ -3,4 +3,8 @@ export class Departament {
     name?: string;
     type?: string;
     hospitalName?: string;
+    number: number;
+    constructor(number: number) {
+        this.number = number;
+    }
 }

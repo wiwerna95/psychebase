@@ -1,50 +1,55 @@
 
 <div class="hospital-container"> 
     <mat-card class="card">
-        <mat-card-header>
+        <mat-card-header style="height: 600px;">
             <mat-card-title-group>
               <div class="hospital-header">
-                <div class="title">{{hospital.name}}</div>
+              <div class="hospital-title">
+                <div class="hospital-image"></div>
+                <div class="title">{{hospital.name}}</div>  
+              </div>
+              <div class="subtitles">
                 <div class="subtitle"> Typ szpitala: {{hospital.type}} </div>
                 <div class="subtitle"> Ilość oddziałów: {{hospital.departamentQuantity}} </div>
-              
-              <mat-grid-list cols="2" rowHeight="5:1">
-                <mat-grid-tile>
-                    <div><b>Kontakt:</b></div>
-                    <div>Telefon: {{hospital.phone}}</div>
-                    <div>Email: {{hospital.email}}</div>
-                    <div>Strona internetowa: <a href="{{hospital.page}}">{{hospital.page}} </a></div>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <div><b>Adres:</b></div>
-                    <div>{{hospital.address}}, {{hospital.city}}</div>
-                    <div>{{hospital.voivodeship}}</div>
-                </mat-grid-tile>
-              </mat-grid-list>
+              </div>
+
+              <div class="info">
+                <div class="contact">
+                  <h3> Kontakt:</h3>
+                  <p>Telefon: {{hospital.phone}}</p>
+                      <p>Email: {{hospital.email}}</p>
+                      <p>Strona internetowa: <a href="{{hospital.page}}">{{hospital.page}} </a></p>
+                </div>
+                <div class="address">
+                  <h3>Adres:</h3>
+                  <p>{{hospital.address}}, {{hospital.city}}</p>
+                  <p>{{hospital.voivodeship}}</p>
+                </div>
+              </div>
+              <p class="description"><b>Opis szpitala: </b> {{hospital.description}}</p>
             </div>
           </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
-
-          <p class="description">Opis szpitala: {{hospital.description}}</p>
-              <div>
+              <div class="rating">
+                <h2>RATING SZPITALA</h2>
                 <app-hosptial-rating (addedRating)="putRating($event)" [hospitalRating] = 'hospital' ></app-hosptial-rating>                
                 <div>
                    
-                    <h3>Dostępne oddziały: </h3>
-                      <mat-card class="card" *ngFor="let departament of departaments">
-                        <mat-card-header>
-                          <mat-card-title>{{departament.name}}</mat-card-title>
-                          <mat-card-subtitle>{{departament.type}}</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content>
-                        </mat-card-content>
-                      </mat-card>
+                <h2> DOSTĘPNE ODDZIAŁY </h2>
+                  <mat-card class="card" *ngFor="let departament of departaments">
+                    <mat-card-header>
+                      <mat-card-title>{{departament.name}}</mat-card-title>
+                      <mat-card-subtitle>{{departament.type}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                    </mat-card-content>
+                  </mat-card>
                 </div>
               </div>
 
               <div class="hospitals-comments">
-                <h3> Opinie o szpitalu:</h3>
+                <h2> OPINIE O SZPITALU</h2>
                 <div> <app-comments></app-comments></div>
               </div>
         </mat-card-content>

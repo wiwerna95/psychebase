@@ -15,4 +15,10 @@ ul li div p {
     width: 20%;
     font-weight:bold;
     font-size: 20px;
+    
+}
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

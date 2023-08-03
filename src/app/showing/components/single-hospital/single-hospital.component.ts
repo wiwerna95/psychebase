@@ -56,8 +56,11 @@ export class SingleHospitalComponent implements OnInit {
         if (this.hospital.name === doc.hospitalName) {
           this.departaments.push(doc)
         }
+        
+        this.departaments = this.departaments
+        .filter((item): item is Departament => !!item)
+        .sort((i, j) => i.number - j.number)
       })
-     
     })
     return this.departaments;
   }

@@ -20,6 +20,12 @@
           <input [(ngModel)]="temporaryDepartament.type" type="text" matInput>
         </mat-form-field>
       </div>
+      <div class="form-group">
+        <mat-form-field class="full-width">
+          <mat-label>Number:</mat-label>
+          <input [(ngModel)]="temporaryDepartament.number" type="text" matInput>
+        </mat-form-field>
+      </div>
       <button mat-button (click)="saveDepartament()" class="btn btn-success">Dodaj</button>
 </div>
 
