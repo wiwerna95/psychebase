@@ -1,0 +1,16 @@
+[
+    {
+    "name": "Wojewódzki Szpital dla Nerwowo i Psychicznie Chorych im. dr Józefa Bednarza",
+    "position": {
+        "lat":53.40852157412919, 
+        "lng": 18.455442353969378
+    }
+    },
+    {
+    "name": "Wielospecjalistyczny Szpital Wojewódzki w Gorzowie Wlkp.",
+    "position": {
+        "lat":52.76255306913365,  
+        "lng": 15.235769983868021
+    }
+    }
+]

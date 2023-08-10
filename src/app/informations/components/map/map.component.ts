@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { ToastrService } from 'ngx-toastr';
-import MarkerClusterer from "@google/markerclustererplus";
+
+import hospitalsLocalizations from './HospitalLocations.json';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -10,6 +12,7 @@ import MarkerClusterer from "@google/markerclustererplus";
 export class MapComponent implements OnInit{
   markers: any[] = [];
   markerCluster: any;
+  hospitalLocalizationsData = hospitalsLocalizations;
   constructor(private toastr: ToastrService) {}
   
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
@@ -64,7 +67,10 @@ getCurrentLocation() {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-
+      this.mapOptions.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      }
       this.mapCenter = new google.maps.LatLng(point);
       this.map.panTo(point);
 
@@ -96,15 +102,18 @@ getCurrentLocation() {
 
 addMarker() {
 
+  for (let element of this.hospitalLocalizationsData) {
     this.markers.push({
-      position: this.marker.position,
+      position: {lat: element.position.lat, lng: element.position.lng},
           label: {
-        color: 'blue',
-        text: 'Marker label ' + (this.markers.length + 1),
+        color: 'black',
+        text: element.name,
       },
-      title: 'Marker title ' + (this.markers.length + 1),
-      options: { animation: google.maps.Animation.BOUNCE },
+      title: element.name + (this.markers.length + 1),
     });
+  }
+
+    
   }
 
   openInfoWindow(marker: MapMarker) {
