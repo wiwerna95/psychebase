@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GoogleMap, MapInfoWindow } from '@angular/google-maps';
+import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { ToastrService } from 'ngx-toastr';
-
+import MarkerClusterer from "@google/markerclustererplus";
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -9,8 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MapComponent implements OnInit{
   markers: any[] = [];
- 
-
+  markerCluster: any;
   constructor(private toastr: ToastrService) {}
   
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
@@ -24,10 +23,11 @@ export class MapComponent implements OnInit{
   mapZoom = 7;
   mapCenter: google.maps.LatLng;
 
-  markerInfoContent = '';
+  markerInfoContent = 'content';
   markerOptions: google.maps.MarkerOptions = {
     draggable: false,
     animation: google.maps.Animation.DROP,
+
   };
 
   mapOptions: google.maps.MapOptions = {
@@ -39,7 +39,14 @@ export class MapComponent implements OnInit{
     position: {  
       lat: 52.39744395242645, 
       lng: 16.903862292061252
-    },
+    }, 
+      label: {
+        color: 'blue',
+        text: 'Marker label ' + (this.markers.length + 1),
+      },
+      title: 'Marker title ' + (this.markers.length + 1),
+      options: { animation: google.maps.Animation.BOUNCE },
+    
 }
 
 ngOnInit(): void {
@@ -91,16 +98,16 @@ addMarker() {
 
     this.markers.push({
       position: this.marker.position,
-      label: {
-        color: 'black',
-        fontWeight: 'bold',
-        text: 'Poznańskie Stowarzyszenie Abstynentów'
+          label: {
+        color: 'blue',
+        text: 'Marker label ' + (this.markers.length + 1),
       },
-      title: 'Adres: Małeckiego 11, 60-706 Poznań' + (this.markers.length + 1),
+      title: 'Marker title ' + (this.markers.length + 1),
+      options: { animation: google.maps.Animation.BOUNCE },
     });
   }
 
-  openInfoWindow(marker: any) {
+  openInfoWindow(marker: MapMarker) {
     this.infoWindow.open(marker);
   }
 }

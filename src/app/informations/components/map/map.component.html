@@ -5,15 +5,16 @@
           <mat-card-title class=""><b>Mapa wszystkich szpitali:</b></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <google-map [zoom]="mapZoom" height="750px" width="1000px" [center]="mapCenter" [options]="mapOptions">
+            <google-map #map [zoom]="mapZoom" height="750px" width="1000px" [center]="mapCenter" [options]="mapOptions">
                 <map-marker
                 *ngFor="let marker of markers"
                 [position]="marker.position"
                 [label]="marker.label"
                 [title]="marker.title"
                 [options]="marker.options"
-                (mapClick)="openInfoWindow(marker)">
-              >
+                #marker1="mapMarker"
+                (mapClick)="openInfoWindow(marker1)">
+              
               </map-marker>
                 <map-info-window>{{ markerInfoContent }}</map-info-window>
               </google-map>
