@@ -1,0 +1,12 @@
+.container {
+    margin: 50px auto;
+    border: 1px dotted blue;
+    height: 500px;
+}
+
+h2 {
+    text-align: center;
+}
+li {
+    list-style-type: none;
+}

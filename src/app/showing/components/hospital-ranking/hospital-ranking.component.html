@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Najlepsze szpitale według rankingu:</h2>
+    <ul>
+        <li *ngFor="let hospital of bestHospitals">
+            <mat-card>
+                <mat-card-header>Nazwa szpitala:</mat-card-header>
+                <mat-card-content>{{hospital.name}}</mat-card-content>
+                <mat-card-footer>{{hospital.rating}}</mat-card-footer>
+            </mat-card>
+        </li>
+    </ul>
+</div>
