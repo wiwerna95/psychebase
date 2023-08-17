@@ -12,7 +12,7 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
-
+    HospitalRatingComponent
 
     
   ],
@@ -25,5 +25,6 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     ReactiveFormsModule,
     NgxStarRatingModule
   ]
+  
 })
 export class RatingModule { }

@@ -31,6 +31,7 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     AppComponent,
   ],
   imports: [
+    NgxStarRatingModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -52,7 +53,7 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     MatSnackBarModule,
     MatIconModule,
     MatTooltipModule,
-    NgxStarRatingModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent], schemas: [CUSTOM_ELEMENTS_SCHEMA]

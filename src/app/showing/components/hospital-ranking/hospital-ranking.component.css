@@ -1,7 +1,6 @@
 .container {
     margin: 50px auto;
-    border: 1px dotted blue;
-    height: 500px;
+   
 }
 
 h2 {
@@ -9,4 +8,35 @@ h2 {
 }
 li {
     list-style-type: none;
+}
+
+.mat-mdc-card  {
+    margin: 20px auto;
+    width: 80%;
+}
+.mat-mdc-card-content {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    align-items: center;;
+    width: 80%;
+}
+
+.card-content {
+    width: 33%;
+    font-size: 20px;
+}
+
+.center {
+    padding: 50px;
+
+}
+
+.center p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.center button {
+    padding: 20px;  
 }

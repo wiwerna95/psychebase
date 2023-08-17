@@ -9,13 +9,15 @@ import { AboutComponent } from './components/about/about.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { InformationsRoutingModule } from './informations-routing.module';
+import { HospitalRankingComponent } from '../showing/components/hospital-ranking/hospital-ranking.component';
 
 
 @NgModule({
   declarations: [
     StartPageComponent,
     HospitalPreparationComponent,
-    AboutComponent
+    AboutComponent,
+    HospitalRankingComponent
     
   ],
   imports: [

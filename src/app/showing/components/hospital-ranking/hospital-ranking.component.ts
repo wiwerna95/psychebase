@@ -12,9 +12,12 @@ export class HospitalRankingComponent implements OnInit {
   hospitalRating: any;
   ratingsForHospital: any;
   rating: number = 0;
+  isClicked = false;
 
   bestHospitals: any[]= [];
-  hospitals: Hospital[] = []
+  hospitals: Hospital[] = [];
+
+  
 
 
   constructor(private dataService: DataService) {}
@@ -27,34 +30,9 @@ export class HospitalRankingComponent implements OnInit {
     
         this.hospitals.push(data)
       })
-
-      //   if (doc.data().hospital === this.hospitalRating.name) {
-          
-      //     this.ratingsForHospital.push(doc.data())
-      //     let rating: number = 0;
-      //   let ratingsForHospitalLength = this.ratingsForHospital.length;
-      //   this.ratingsForHospital.forEach((x: SingleRating) => {
-      //    rating = rating + x.rating!
-      //   })
-      //   rating = Math.round(rating/ratingsForHospitalLength);
-      //   this.rating = rating;
-      // }
+      this.bestHospitals = this.hospitals.sort((a: any, b: any) => b.rating - a.rating);
+      this.bestHospitals =  this.bestHospitals.slice(0,9)
     })
-    this.bestHospitals = this.hospitals.sort((a: any, b: any) => b.rating - a.rating);
-    let bestHospitals: any = [];
-    console.log('best hosp', this.bestHospitals.slice(2))
-    // console.log(this.bestHospitals)
-    // if (this.hospitals.length) {
-    //   for (let i = 0; i < 10; i++) {
-    //     console.log(i, this.hospitals[i])
-    //     bestHospitals.push(this.hospitals[i])
-    //  }
-    // }
-    
-  //  console.log(bestHospitals)
-
- 
-  
   }
 
   }

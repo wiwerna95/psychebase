@@ -6,13 +6,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { StartPageComponent } from '../informations/components/start-page/start-page.component';
 import { AddHospitalComponent } from './components/add-hospital/add-hospital.component';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
+import { MapComponent } from '../informations/components/map/map.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'start-page', pathMatch: 'full' },
   { path: 'dodaj', component: AddHospitalComponent },
   { path: 'szpitale', component: HospitalsListComponent },
   { path: 'update/:name', component: UpdateHospitalComponent },
-  { path: 'show/:hospital', component: SingleHospitalComponent }
+  { path: 'show/:hospital', component: SingleHospitalComponent },
+  { path: 'mapa', component: MapComponent}
 ];
 
 @NgModule({
