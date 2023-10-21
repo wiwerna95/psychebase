@@ -1,25 +1,7 @@
-
 <div class="container">
-    <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title class=""><b>Mapa wszystkich szpitali:</b></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <google-map #map [zoom]="mapZoom" height="750px" width="1000px" [center]="mapCenter" [options]="mapOptions">
-                <map-marker
-                *ngFor="let marker of markers"
-                [position]="marker.position"
-                [label]="marker.label"
-                [title]="marker.title"
-                [options]="marker.options"
-                #marker1="mapMarker"
-                (mapClick)="openInfoWindow(marker1)">
-              
-              </map-marker>
-                <map-info-window>{{ markerInfoContent }}</map-info-window>
-              </google-map>
-        </mat-card-content>
+    <mat-card>
+        <h1> Mapa szpitali psychiatrycznych w Polsce</h1>
+        
+        
     </mat-card>
-
-
 </div>

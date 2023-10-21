@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { InformationsRoutingModule } from './informations-routing.module';
 import { HospitalRankingComponent } from '../showing/components/hospital-ranking/hospital-ranking.component';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HospitalRankingComponent } from '../showing/components/hospital-ranking
     StartPageComponent,
     HospitalPreparationComponent,
     AboutComponent,
-    HospitalRankingComponent
+    HospitalRankingComponent,
+    MapComponent
     
   ],
   imports: [
