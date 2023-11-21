@@ -1,4 +1,7 @@
 .submit-form {
-  max-width: 300px;
-  margin: auto;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.mat-mdc-form-field {
+  width: 800px;
 }

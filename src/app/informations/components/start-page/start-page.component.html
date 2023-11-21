@@ -7,7 +7,7 @@
     </div>
 </div>
 <div class="searching">
-  <h1>Wyszukaj Szpital po mieście:</h1>
+  <h1>Wyszukaj Szpital Psychiatryczny po mieście, w jakim się znajdujesz:</h1>
   <div class="search-bar-container">
     <div class="form-group">
         <mat-form-field>
@@ -23,7 +23,9 @@
 
 </div>
 
+
 <div class="hospital-result" *ngFor="let element of result">
+
   <h3>{{element.name}}</h3>
   <h4>{{element.address}}, {{element.city}}</h4>
   <div class="psychebase-button show">Zobacz szpital</div>
@@ -32,6 +34,8 @@
 </div>
 
 <div class="background">
+  <h1>Znajdź też szpital dla siebie lub kogoś bliskiego za pomocą innych sposobów:</h1>
+
   <div class="container">
     <div [routerLink]="['/szpitale']"  class="tile">
       <img  src="./../../../assets/lekarz.png"/>
