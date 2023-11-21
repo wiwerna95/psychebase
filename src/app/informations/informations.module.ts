@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { InformationsRoutingModule } from './informations-routing.module';
 import { HospitalRankingComponent } from '../showing/components/hospital-ranking/hospital-ranking.component';
 import { MapComponent } from './components/map/map.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { MapComponent } from './components/map/map.component';
     HospitalPreparationComponent,
     AboutComponent,
     HospitalRankingComponent,
-    MapComponent
+    MapComponent,
     
   ],
   imports: [
@@ -28,7 +29,8 @@ import { MapComponent } from './components/map/map.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    InformationsRoutingModule
+    InformationsRoutingModule,
+    FormsModule
     
   ]
 })
