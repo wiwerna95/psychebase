@@ -3,8 +3,11 @@
    
 }
 
-h2 {
+h1{
     text-align: center;
+    color:#007B4F;
+    font-size: 26px;
+    margin-bottom: 40px;
 }
 li {
     list-style-type: none;
