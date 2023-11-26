@@ -1,4 +1,6 @@
 <div class="comment-container">
+  <div class="lack-of-comments" *ngIf="comments.length === 0">
+  Tutaj jeszcze nie ma komentarzy. Dodaj swój komenatrz jako pierwszy!</div>
    
     <div class="comment-section" *ngIf="comments.length > 1" >
         <mat-card class="card" *ngFor="let comment of comments">

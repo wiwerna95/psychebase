@@ -17,7 +17,12 @@ ul li div p {
     font-size: 20px;
     
 }
-.rating {
+.rating-o {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rating-t {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -28,15 +28,21 @@ h2 {
 }
 .rating {
     margin: 0 auto;
+    border: 1px solid rgba(214, 214, 214, 0.54);
+    margin-top: 50px;
 }
 h3 {
     color:#007B4F;
 }
 
-.contact, address {
+.contact {
     width: 50%;
+    font-size: 21px;
 }
-
+.address {
+    width: 50%;
+    font-size: 21px;
+}
 .mat-grid-tile-content {
     display: flex;
     flex-direction: column;
@@ -68,7 +74,9 @@ h3 {
 .hospital-image {    
     background-image: url('../../../../assets/hospital.png');
     background-size: cover;
-   width: 20%;
+   /* width: 20%; */
+   height: 100%;
+   width: 100%;
     /* padding: 30px; */
 
 }
@@ -76,10 +84,12 @@ h3 {
 .title {
     /* text-align: center; */
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     width: 70%;
     padding: 30px;
     color:#007B4F;
+    text-align: center;
+    padding-top: 150px;
 }
 
 .subtitles {
@@ -90,16 +100,22 @@ h3 {
 
 .subtitle {
       text-align: center;
-      font-size: 20px;
+      font-size: 27px;
       padding: 20px;
       width: 50%;
 }
 
 .description {
-    /* padding: 30px;
-    font-weight: bold */
+    padding: 30px;
+    font-size: 20px;
 }
 
 .hospitals-comments {
-    /* padding: 40px; */
+    margin-top: 50px;
+    border: 1px solid rgba(214, 214, 214, 0.54);
+}
+
+.hospital-image-container {
+    height: 300px;
+    width: 300px;
 }

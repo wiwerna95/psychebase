@@ -1,13 +1,13 @@
 <ul>
     <li>
-        <div class="rating">
+        <div class="rating-o">
             <p>Rating ogólny:</p>
             <ngx-star-rating [id]="'rating'" [disabled]="true" [(ngModel)]=rating></ngx-star-rating>
         </div>
     
     </li>
     <li>
-        <div class="rating">
+        <div class="rating-t">
             <p>Twój rating:</p>
             <ngx-star-rating [id]="'ratingForUser'" [disabled]="isClicked" [(ngModel)]=ratingForUser (ngModelChange)="calculateRating()"></ngx-star-rating>
     </div>

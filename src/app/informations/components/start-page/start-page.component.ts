@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Hospital } from 'src/app/models/Hospital.model';
 import { CommunicationService } from 'src/app/services/communication-service.service';
 import { DataService } from 'src/app/services/data.service';
@@ -16,7 +17,8 @@ export class StartPageComponent implements OnInit{
   public result: Array<Hospital> = [];
 
   constructor(private communicationService: CommunicationService,
-    private hospitalService: DataService) {
+    private hospitalService: DataService,
+    private router: Router) {
 
   }
 
@@ -58,6 +60,10 @@ export class StartPageComponent implements OnInit{
     for (let element of this.hospitals) {
       this.autoCompleteList.push(element.city!);
     }
+  }
+
+  public redirectToHospital(hospital: any) {
+    this.router.navigate(['/show', hospital.name])
   }
 
 }

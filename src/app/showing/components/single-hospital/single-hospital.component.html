@@ -1,11 +1,14 @@
 
 <div class="hospital-container"> 
     <mat-card class="card">
-        <mat-card-header style="height: 600px;">
+        <mat-card-header style="height: 1100px;">
             <mat-card-title-group>
               <div class="hospital-header">
               <div class="hospital-title">
-                <div class="hospital-image"></div>
+                <div class="hospital-image-container">
+                  <div class="hospital-image"></div>
+                </div>
+                
                 <div class="title">{{hospital.name}}</div>  
               </div>
               <div class="subtitles">
@@ -36,7 +39,7 @@
                 <app-hosptial-rating (addedRating)="putRating($event)" [hospitalRating] = 'hospital' ></app-hosptial-rating>                
                 <div>
                    
-                <h2> DOSTĘPNE ODDZIAŁY </h2>
+                <h2 *ngIf="departaments.length !== 0"> DOSTĘPNE ODDZIAŁY </h2>
                   <mat-card class="card" *ngFor="let departament of departaments">
                     <mat-card-header>
                       <mat-card-title>{{departament.name}}</mat-card-title>

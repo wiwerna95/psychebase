@@ -26,6 +26,7 @@ h2 {
     display: flex;
     align-content: center;
     justify-content: space-between;
+    font-size: 25px;
   }
   
   .example-accordion-item-description {
@@ -61,7 +62,7 @@ h2 {
   }
   
   ul li h4 {
-    width: 50%;
+    width: 70%;
   }
 
   ul li p {
