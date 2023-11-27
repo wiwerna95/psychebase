@@ -2,6 +2,13 @@
     <mat-card>
         <h1> Mapa szpitali psychiatrycznych w Polsce</h1>
         
-        <google-map></google-map>
+        <google-map
+        height="1000px"
+        width="80%"
+        [zoom]="zoom"
+        [center]="center"
+        [options]="options"
+        ></google-map>
     </mat-card>
+   
 </div>
