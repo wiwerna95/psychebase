@@ -12,6 +12,7 @@ import { InformationsRoutingModule } from './informations-routing.module';
 import { HospitalRankingComponent } from '../showing/components/hospital-ranking/hospital-ranking.component';
 import { MapComponent } from './components/map/map.component';
 import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     InformationsRoutingModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    GoogleMapsModule
     
   ]
 })
