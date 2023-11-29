@@ -11,8 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { InformationsRoutingModule } from './informations-routing.module';
 import { HospitalRankingComponent } from '../showing/components/hospital-ranking/hospital-ranking.component';
 import { MapComponent } from './components/map/map.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRippleModule } from '@angular/material/core';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -22,6 +25,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AboutComponent,
     HospitalRankingComponent,
     MapComponent,
+    LoginComponent
     
   ],
   imports: [
@@ -33,8 +37,21 @@ import { GoogleMapsModule } from '@angular/google-maps';
     InformationsRoutingModule,
     FormsModule,
     MatCardModule,
-    GoogleMapsModule
-    
+    GoogleMapsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    FormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRippleModule
+  
+  ],
+  exports: [
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule
   ]
 })
 export class InformationsModule { }

@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxMaterialRatingModule } from 'ngx-material-rating';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+
 @NgModule({
   declarations: [
     AppComponent,

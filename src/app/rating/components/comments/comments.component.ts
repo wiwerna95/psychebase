@@ -17,7 +17,8 @@ export class CommentsComponent implements OnInit {
     title: '',
     nick: '',
     hospital: '',
-    comment: ''
+    comment: '',
+    departament: '',
   };
 
   constructor(private data: DataService, private route: ActivatedRoute) {}

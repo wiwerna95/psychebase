@@ -7,10 +7,15 @@ import { StartPageComponent } from '../informations/components/start-page/start-
 import { AddHospitalComponent } from './components/add-hospital/add-hospital.component';
 import { UpdateHospitalComponent } from './components/update-hospital/update-hospital.component';
 import { MapComponent } from '../informations/components/map/map.component';
+import { authGuard } from '../auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'start-page', pathMatch: 'full' },
-  { path: 'dodaj', component: AddHospitalComponent },
+  { 
+    path: 'dodaj',
+    component: AddHospitalComponent,
+    canActivate: [authGuard] 
+  },
   { path: 'szpitale', component: HospitalsListComponent },
   { path: 'update/:name', component: UpdateHospitalComponent },
   { path: 'show/:hospital', component: SingleHospitalComponent },

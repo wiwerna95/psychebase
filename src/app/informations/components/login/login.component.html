@@ -1,0 +1,19 @@
+<div class="container">
+    <div>
+        <h1> Zaloguj</h1>
+        <div class="form-group">
+            <mat-form-field class="full-width">
+              <mat-label>login/email:</mat-label>
+              <input [(ngModel)]="username" type="text" matInput>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <mat-label>Hasło</mat-label>
+              <input [(ngModel)]="password" type="text" matInput>
+            </mat-form-field>
+          </div>
+    </div>
+    <button mat-button (click)="logIn()" class="btn btn-success">Zaloguj</button>
+
+</div>

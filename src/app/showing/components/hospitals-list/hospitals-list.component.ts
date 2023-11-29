@@ -2,6 +2,7 @@ import { CommunicationService } from './../../../services/communication-service.
 import { Hospital } from 'src/app/models/Hospital.model';
 import { DataService } from '../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -13,14 +14,22 @@ import { Component, OnInit } from '@angular/core';
 export class HospitalsListComponent implements OnInit {
   hospitals: Hospital[] = [];
   searchText: string = ''
+  isLogged: boolean = false;
 
-  constructor(private hospitalService: DataService, private communicationService: CommunicationService) { }
+  constructor(
+    private hospitalService: DataService, 
+    private communicationService: CommunicationService,
+    private auth: AuthService) { }
 
   ngOnInit(): void {
     this.retrieveHospitals();
     this.communicationService.transferResultOfSearching$.subscribe( value => {
       this.hospitals = value;
     })
+    this.auth.isLoggedInSubject.subscribe( (resp: boolean)=> {
+      this.isLogged = resp;
+    })
+
   }
 
 

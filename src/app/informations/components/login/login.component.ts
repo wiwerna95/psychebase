@@ -20,6 +20,6 @@ export class LoginComponent {
   });
 
   logIn() {
-    // this.authService.SignIn(this.username, this.password);
+    this.authService.SignIn(this.username, this.password);
   }
 }

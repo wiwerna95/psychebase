@@ -2,7 +2,7 @@
   <div class="lack-of-comments" *ngIf="comments.length === 0">
   Tutaj jeszcze nie ma komentarzy. Dodaj swój komenatrz jako pierwszy!</div>
    
-    <div class="comment-section" *ngIf="comments.length > 1" >
+    <div class="comment-section" *ngIf="comments.length >= 1" >
         <mat-card class="card" *ngFor="let comment of comments">
             <mat-card-header>
               <mat-card-title style="padding: 10px; font-weight: bold;">{{comment.title}}</mat-card-title>
@@ -12,9 +12,6 @@
                 {{comment.comment}}
             </mat-card-content>
           </mat-card>
-    </div>
-    <div *ngIf="comments.length === 1">
-      Brak komentarzy.
     </div>
    
     <div class="add-comment">
@@ -30,7 +27,10 @@
               <input matInput maxlength="50" [(ngModel)]="comment.nick" name="nick">
 
             </mat-form-field>
-
+            <mat-form-field class="full-width">
+              <mat-label>Oddział, na którym przebywałeś/przebywałaś/przebywałoś</mat-label>
+              <textarea type="text" matInput maxlength="1000" [(ngModel)]="comment.departament" name="comment"> </textarea>
+            </mat-form-field>
             <mat-form-field class="full-width">
               <mat-label>Treść</mat-label>
               <textarea type="text" matInput maxlength="1000" [(ngModel)]="comment.comment" name="comment"> </textarea>

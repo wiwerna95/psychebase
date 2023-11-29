@@ -53,7 +53,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTooltipModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
     
   ], 
   schemas: [

@@ -3,4 +3,5 @@ export class Comment {
     nick? :string;
     comment?: string;
     hospital?: string;
+    departament?: string;
 }

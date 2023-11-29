@@ -13,7 +13,7 @@
         {{hospital.description}}
       </mat-card-content>
       <mat-card-actions class="actions">
-        <div class="psychebase-button" [routerLink]="['/update', hospital.name]">Dodaj oddział</div>
+        <div class="psychebase-button" *ngIf="isLogged === true" [routerLink]="['/update', hospital.name]">Dodaj oddział</div>
         <div class="psychebase-button" [routerLink]="['/show', hospital.name]">Odwiedź i oceń</div>
       </mat-card-actions>
     </mat-card>
