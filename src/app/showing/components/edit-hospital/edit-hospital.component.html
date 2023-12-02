@@ -1,0 +1,93 @@
+
+
+<div class="submit-form">
+    <h3>Dodawanie oddziału dla szpitala: {{hospital.name}} </h3>
+     <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Nazwa szpitala:</mat-label>
+            <input [(ngModel)]="hospital.name" type="text" matInput>
+          </mat-form-field>
+        </div>
+       
+        <div class="form-group">
+            <mat-form-field class="full-width">
+                <mat-label>Ulica i nr :</mat-label>
+                <input [(ngModel)]="hospital.address" type="text" matInput>
+            </mat-form-field>
+        </div>
+        
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Miasto:</mat-label>
+            <input [(ngModel)]="hospital.city" type="text" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="full-width">
+              <mat-label>Województwo:</mat-label>
+              <input [(ngModel)]="hospital.voivodeship" type="text" matInput>
+              </mat-form-field>
+          </div>
+
+        <mat-form-field class="full-width">
+            <mat-label>Typ:</mat-label>
+            <input [(ngModel)]="hospital.type" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Opis:</mat-label>
+            <input [(ngModel)]="hospital.description" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Ilośc oddziałów:</mat-label>
+            <input [(ngModel)]="hospital.departamentQuantity" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Telefon:</mat-label>
+            <input [(ngModel)]="hospital.phone" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Dyrektor:</mat-label>
+            <input [(ngModel)]="hospital.director" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Strona:</mat-label>
+            <input [(ngModel)]="hospital.page" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Email:</mat-label>
+            <input [(ngModel)]="hospital.email" type="text" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Logo:</mat-label>
+            <input [(ngModel)]="hospital.logo" type="text" matInput>
+          </mat-form-field>
+        <button mat-button (click)="saveHospital()" class="btn btn-success">Zmień</button>
+  </div>
+  
+  
+  
+  

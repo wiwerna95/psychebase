@@ -55,6 +55,27 @@ export class DataService {
 
   }
 
+  updateHospital(hospital: Hospital) {
+    this.store.collection("hospital").doc(`${hospital.id}`).set(
+      {
+        address: hospital.address,
+        city: hospital.city,
+        departamentQuantity: hospital.departamentQuantity,
+        description: hospital.description,
+        director: hospital.director,
+        email: hospital.email,
+        id: hospital.id,
+        logo: hospital.logo,
+        name: hospital.name,
+        phone: hospital.phone,
+        rating: hospital.rating,
+        type: hospital.type,
+        page: hospital.page,
+        voivodeship: hospital.voivodeship
+      }
+    );
+  }
+
   putDepartamentRating() {
     
   }

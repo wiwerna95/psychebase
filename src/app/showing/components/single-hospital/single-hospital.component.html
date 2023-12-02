@@ -20,8 +20,8 @@
                 <div class="contact">
                   <h3> Kontakt:</h3>
                   <p>Telefon: {{hospital.phone}}</p>
-                      <p>Email: {{hospital.email}}</p>
-                      <p>Strona internetowa: <a href="{{hospital.page}}">{{hospital.page}} </a></p>
+                      <a href="mailto:{{hospital.email}}">Email: {{hospital.email}}</a>
+                      <p>Strona internetowa: <a target="_blank" href="{{hospital.page}}">{{hospital.page}} </a></p>
                 </div>
                 <div class="address">
                   <h3>Adres:</h3>
@@ -30,6 +30,8 @@
                 </div>
               </div>
               <p class="description"><b>Opis szpitala: </b> {{hospital.description}}</p>
+              <p class="edit" [routerLink]="['/edit', hospital.name]" *ngIf="loggedIn"><b>Edytuj szpital </b></p>
+
             </div>
           </mat-card-title-group>
         </mat-card-header>

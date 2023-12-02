@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { EditHospitalComponent } from './components/edit-hospital/edit-hospital.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HospitalRatingComponent,
     CommentsComponent,
     HospitalRatingComponent,
+    EditHospitalComponent
     
   ],
   providers: [
@@ -53,6 +55,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTooltipModule,
     ReactiveFormsModule,
     FormsModule,
+
     
   ], 
   schemas: [

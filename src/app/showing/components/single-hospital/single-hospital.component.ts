@@ -1,8 +1,9 @@
 import { Departament } from 'src/app/models/Departament.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hospital } from 'src/app/models/Hospital.model';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-single-hospital',
@@ -14,16 +15,22 @@ export class SingleHospitalComponent implements OnInit {
   public hospital: Hospital = new Hospital();
   private hospitalParams: any;
   private sub: any;
+  public loggedIn = false;
   public hospital1: any;
   public departaments: Departament[] = [];
   public displayedColumns: string[] = ['Nazwa', 'Typ'];
 
   constructor(private hospitalService: DataService,
-            private route: ActivatedRoute) {
+            private route: ActivatedRoute,
+            private auth: AuthService,
+            private router: Router) {
 
   }
 
   public ngOnInit() {
+    this.auth.isLoggedInSubject.subscribe( (resp: boolean)=> {
+      this.loggedIn = resp;
+    })
     this.sub = this.route.params.subscribe((params: any) => {
       this.hospitalParams = params;
       this.getAllHospitals();
@@ -33,6 +40,7 @@ export class SingleHospitalComponent implements OnInit {
    
    
   }
+
 
   private getAllHospitals() {
     this.hospitalService.getAll()

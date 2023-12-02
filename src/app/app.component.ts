@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -17,4 +18,5 @@ export class AppComponent implements OnInit{
       this.loggedIn = resp;
     })
   }
+  
 }
