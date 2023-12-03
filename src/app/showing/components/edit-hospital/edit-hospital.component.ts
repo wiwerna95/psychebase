@@ -26,8 +26,6 @@ export class EditHospitalComponent implements OnInit {
   }
 
   saveHospital() {
-    console.log(this.hospital.logo)
-
     this.hospitalService.updateHospital(this.hospital)
   }
 
